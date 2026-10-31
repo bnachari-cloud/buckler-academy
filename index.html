@@ -737,6 +737,33 @@ footer{background:#17243a!important;color:#d9e1ed!important}
 .resources-section .res-btn.gold, .resources-section .res-btn.amber, .resources-section .res-btn.blue { color:#ffffff !important; }
 </style>
 
+<style id="tagline-style">
+.tagline-highlight{display:inline-flex;align-items:center;gap:8px;position:relative;overflow:hidden;
+  margin-top:9px;padding:6px 16px 6px 11px;border-radius:999px;
+  font-size:13px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;line-height:1;
+  color:#fff3c9!important;background:linear-gradient(100deg,rgba(242,181,68,.28),rgba(242,181,68,.08) 70%);
+  border:1px solid rgba(242,181,68,.7);box-shadow:0 0 0 3px rgba(242,181,68,.10),0 6px 18px rgba(0,0,0,.28)}
+.tagline-highlight .ts-shield{flex:0 0 auto;color:#f2b544;filter:drop-shadow(0 0 5px rgba(242,181,68,.6))}
+.tagline-highlight span{background:linear-gradient(90deg,#fff7dc,#ffd36b 55%,#f2b544);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.tagline-highlight::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);animation:tlShine 4.5s ease-in-out infinite}
+@keyframes tlShine{0%,60%{left:-60%}100%{left:140%}}
+.tagline-foot{margin-top:8px!important;font-size:11px!important;padding:5px 13px 5px 9px}
+@media(max-width:700px){.academy-tagline.tagline-highlight{font-size:10.5px!important;letter-spacing:1.1px;padding:5px 12px 5px 9px;margin-top:7px}.tagline-highlight .ts-shield{width:14px;height:14px}}
+@media(prefers-reduced-motion:reduce){.tagline-highlight::after{animation:none;display:none}}
+</style>
+
+<style id="owner-style">
+.owner-chip{display:flex;align-items:center;gap:10px;margin-left:14px;padding:5px 15px 5px 5px;border-radius:999px;
+  background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.06));border:1px solid rgba(242,181,68,.55);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:0 6px 18px rgba(0,0,0,.25);flex:0 0 auto}
+.owner-chip img{width:44px;height:44px;border-radius:50%;object-fit:cover;display:block;border:2px solid #f2b544;box-shadow:0 0 0 3px rgba(242,181,68,.18)}
+.owner-text{display:flex;flex-direction:column;line-height:1.15}
+.owner-role{font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#ffd98a}
+.owner-name{font-size:11px;font-weight:650;color:#fff;white-space:nowrap;margin-top:2px}
+@media(max-width:700px){.owner-chip{margin-left:auto;padding:3px;gap:0}.owner-chip img{width:38px;height:38px}.owner-text{display:none}}
+</style>
+
 </head>
 <body>
 
@@ -747,9 +774,13 @@ footer{background:#17243a!important;color:#d9e1ed!important}
     <div class="academy-brand">
       <div class="academy-kicker">LEARN • PRACTISE • SUCCEED</div>
       <div class="academy-name">Buckler Acedamy</div>
-      <div class="academy-tagline">Your preparation. Your progress. Your success.</div>
+      <div class="academy-tagline tagline-highlight"><svg class="ts-shield" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.3 8 11 4.6-1.7 8-6 8-11V5l-8-3z" fill="currentColor"/><path d="m8.6 12.2 2.4 2.4 4.6-4.9" fill="none" stroke="#17243a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Your Shield to Success</span></div>
     </div>
     <a class="academy-header-cta" href="#courses">Explore Courses <span>↗</span></a>
+	<div class="owner-chip" title="B. Naresh Achari — Founder, Buckler Acedamy">
+      <img src="data:image/jpeg;base64,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" alt="B. Naresh Achari, Founder of Buckler Acedamy" width="44" height="44">
+      <div class="owner-text"><span class="owner-role">Founder</span><span class="owner-name">B. Naresh Achari</span></div>
+    </div>
   </div>
 </header>
 <div class="header-border-bottom"></div>
@@ -762,6 +793,7 @@ footer{background:#17243a!important;color:#d9e1ed!important}
     <a href="#resources" onclick="closeMobileNav()">Study Materials</a>
     <a href="#youtube-classes" onclick="closeMobileNav()">YouTube Classes</a>
     <a href="#current-affairs" onclick="closeMobileNav()">Current Affairs</a>
+	<a href="#ca-2026" onclick="closeMobileNav()">2026 CA</a>
     <a href="#sm-quiz" onclick="closeMobileNav()">Practice MCQs</a>
     <a href="mock-test.html" onclick="closeMobileNav()">Mock Tests</a>
     <a href="menu.html" onclick="closeMobileNav()">All Sections ☰</a>
@@ -788,202 +820,7 @@ footer{background:#17243a!important;color:#d9e1ed!important}
     <a class="course-card" href="#sm-quiz"><span class="course-icon">✍️</span><span class="course-number">04 / SELF-ASSESSMENT</span><h3>Practice MCQs</h3><p>Test what you have learned, check your answers and revise key concepts.</p><span class="course-link">Start practice <b>↗</b></span></a>
   </div>
 </section>
-<div class="section" id="about">
-  <div class="section-title">About the Office</div>
-  <div class="section-sub">Serving Damagatla village under Nandikotkur Mandal, Nandyal District, Andhra Pradesh</div>
-  <div class="about-grid">
-    <div class="about-card"><h3>🌾 Our Mission</h3><p>The Swarna Gramam Swarna Ward programme envisions transforming Damagatla into a self-sustaining, prosperous village — ensuring clean water, proper sanitation, good roads, livelihoods, and social security for every family in our community.</p></div>
-    <div class="about-card"><h3>🏗️ Village Development</h3><p>We coordinate with DRDA, Gram Panchayat, and line departments to plan and execute infrastructure works — roads, drains, streetlights, and public amenities — under approved budgets through the Engineering Assistant's supervision.</p></div>
-    <div class="about-card"><h3>📋 Welfare &amp; Social Security</h3><p>Our Welfare Assistant and field staff facilitate pensions, housing, women &amp; child welfare, and health services. We assist residents with documentation, applications, and grievance resolution at the Panchayat Office.</p></div>
-    <div class="about-card"><h3>🌿 Health &amp; Community</h3><p>Our ANM and AHA ensure maternal health, immunization, and health awareness. Village Servants and Assistants connect households to government services and maintain village-level records and attendance.</p></div>
-  </div>
-</div>
 
-<!-- SCHEMES -->
-<div class="schemes-section" id="schemes">
-  <div class="section-title">Government Schemes</div>
-  <div class="section-sub">Welfare programmes implemented in Damagatla under AP Government</div>
-
-  <!-- Department Filter Bar -->
-  <div class="dept-filter-bar" id="dept-filter-bar">
-    <button class="dept-btn active" onclick="filterSchemes(&#39;all&#39;)">📋 All Schemes</button>
-    <button class="dept-btn" onclick="filterSchemes(&#39;welfare&#39;)">🤝 Welfare Department</button>
-    <button class="dept-btn" onclick="filterSchemes(&#39;health&#39;)">🏥 Health Department</button>
-    <button class="dept-btn" onclick="filterSchemes(&#39;veterinary&#39;)">🐄 Veterinary Department</button>
-    <button class="dept-btn" onclick="filterSchemes(&#39;agriculture&#39;)">🌾 Agriculture Department</button>
-  </div>
-
-  <!-- Department Heading (shown when filtered) -->
-  <div id="dept-heading" style="display:none;margin-bottom:18px;">
-    <div id="dept-heading-text" style="font-family:&#39;Tiro Telugu&#39;,serif;font-size:18px;color:#FFD700;padding:12px 18px;background:rgba(255,215,0,0.08);border-left:4px solid #FFD700;border-radius:4px;"></div>
-  </div>
-
-  <!-- No results message -->
-  <div id="no-schemes-msg" style="display:none;text-align:center;padding:40px 20px;color:#6BAED6;font-size:15px;">
-    <div style="font-size:36px;margin-bottom:12px;">🔍</div>
-    No schemes currently listed for this department.<br>
-    <span style="font-size:12px;opacity:0.7;">Check back soon for updates.</span>
-  </div>
-
-  <!-- Active Schemes -->
-  <div class="schemes-group-label">Active Schemes</div>
-  <div class="schemes-grid">
-    <div class="scheme-card" data-dept="welfare">
-      <div class="scheme-icon">👩‍👧</div>
-      <div class="scheme-name">Thalliki Vandanam</div>
-      <div class="scheme-telugu">తల్లికి వందనం</div>
-      <div class="scheme-desc">Financial assistance provided to mothers on Children's Day to support child nutrition, education, and overall family well-being.</div>
-      <span class="scheme-tag">Women &amp; Child</span>
-      <span class="scheme-tag dept-tag">🤝 Welfare</span>
-    </div>
-    <div class="scheme-card" data-dept="welfare">
-      <div class="scheme-icon">🛺</div>
-      <div class="scheme-name">Auto Driver La Seva Lo</div>
-      <div class="scheme-telugu">ఆటో డ్రైవర్ల సేవలో</div>
-      <div class="scheme-desc">Financial support and recognition for auto drivers serving rural communities, covering fuel costs, insurance, and vehicle maintenance assistance.</div>
-      <span class="scheme-tag">Transport Workers</span>
-      <span class="scheme-tag dept-tag">🤝 Welfare</span>
-    </div>
-    <div class="scheme-card" data-dept="agriculture">
-      <div class="scheme-icon">🌾</div>
-      <div class="scheme-name">Annadatha Sukhibava</div>
-      <div class="scheme-telugu">అన్నదాత సుఖీభవ</div>
-      <div class="scheme-desc">Crop investment support and insurance for farmers to ensure financial security during crop loss due to natural calamities or market volatility.</div>
-      <span class="scheme-tag">Agriculture</span>
-      <span class="scheme-tag dept-tag">🌾 Agriculture</span>
-    </div>
-    <div class="scheme-card" data-dept="welfare">
-      <div class="scheme-icon">🧓</div>
-      <div class="scheme-name">NTR Bharosa Pension</div>
-      <div class="scheme-telugu">ఎన్టీఆర్ భరోసా పెన్షన్</div>
-      <div class="scheme-desc">Monthly financial pension assistance of ₹3,000 to elderly, widows, differently-abled persons, weavers, and toddy workers in need of social security.</div>
-      <span class="scheme-tag">Social Security</span>
-      <span class="scheme-tag dept-tag">🤝 Welfare</span>
-    </div>
-    <div class="scheme-card" data-dept="welfare">
-      <div class="scheme-icon">🎓</div>
-      <div class="scheme-name">Post Metric Scholarships</div>
-      <div class="scheme-telugu">పోస్ట్ మెట్రిక్ స్కాలర్షిప్</div>
-      <div class="scheme-desc">Scholarships under MTF (Merit cum Means) and RTF (Reimbursement of Tuition Fee) for SC/ST/BC/Minority students pursuing higher education beyond Class 10.</div>
-      <span class="scheme-tag">MTF / RTF · Education</span>
-      <span class="scheme-tag dept-tag">🤝 Welfare</span>
-    </div>
-  </div>
-
-  <!-- Health Schemes -->
-  <div class="schemes-group-label" id="group-health">Health Department Schemes</div>
-  <div class="schemes-grid" id="grid-health">
-    <div class="scheme-card" data-dept="health">
-      <div class="scheme-icon">🤰</div>
-      <div class="scheme-name">Dr. NTR Vaidya Seva</div>
-      <div class="scheme-telugu">డాక్టర్ ఎన్‌టీఆర్ వైద్య సేవ</div>
-      <div class="scheme-desc">Free health coverage up to ₹5 lakh per year for BPL families, covering critical illnesses, surgeries, and hospitalisation at empanelled hospitals.</div>
-      <span class="scheme-tag">Health Insurance</span>
-      <span class="scheme-tag dept-tag">🏥 Health</span>
-    </div>
-    <div class="scheme-card" data-dept="health">
-      <div class="scheme-icon">👶</div>
-      <div class="scheme-name">Janani Suraksha Yojana</div>
-      <div class="scheme-telugu">జననీ సురక్షా యోజన</div>
-      <div class="scheme-desc">Financial assistance to pregnant women for institutional deliveries to reduce maternal and infant mortality rates among BPL families.</div>
-      <span class="scheme-tag">Maternal Health</span>
-      <span class="scheme-tag dept-tag">🏥 Health</span>
-    </div>
-    <div class="scheme-card" data-dept="health">
-      <div class="scheme-icon">💉</div>
-      <div class="scheme-name">National Immunization Programme</div>
-      <div class="scheme-telugu">జాతీయ టీకా కార్యక్రమం</div>
-      <div class="scheme-desc">Free vaccination for children and pregnant women against preventable diseases, conducted through ANM and ASHA workers at village level.</div>
-      <span class="scheme-tag">Child Health</span>
-      <span class="scheme-tag dept-tag">🏥 Health</span>
-    </div>
-  </div>
-
-  <!-- Veterinary Schemes -->
-  <div class="schemes-group-label" id="group-veterinary">Veterinary Department Schemes</div>
-  <div class="schemes-grid" id="grid-veterinary">
-    <div class="scheme-card" data-dept="veterinary">
-      <div class="scheme-icon">🐄</div>
-      <div class="scheme-name">Pashu Bima</div>
-      <div class="scheme-telugu"> పశు బీమా</div>
-      <div class="scheme-desc">Free insurance coverage for livestock owned by small and marginal farmers, protecting against accidental death of cattle, sheep, and goats.</div>
-      <span class="scheme-tag">Livestock Insurance</span>
-      <span class="scheme-tag dept-tag">🐄 Veterinary</span>
-    </div>
-    <div class="scheme-card" data-dept="veterinary">
-      <div class="scheme-icon">🐓</div>
-      <div class="scheme-name">Backyard Poultry Scheme</div>
-      <div class="scheme-telugu">వెనుకటి పశుపోషణ పథకం</div>
-      <div class="scheme-desc">Distribution of chicks and feed support to BPL families for poultry rearing to augment rural household income through backyard poultry farming.</div>
-      <span class="scheme-tag">Poultry</span>
-      <span class="scheme-tag dept-tag">🐄 Veterinary</span>
-    </div>
-    <div class="scheme-card" data-dept="veterinary">
-      <div class="scheme-icon">🏥</div>
-      <div class="scheme-name">Mobile Veterinary Clinics</div>
-      <div class="scheme-telugu">మొబైల్ పశు వైద్యం</div>
-      <div class="scheme-desc">Doorstep veterinary services including treatment, artificial insemination, and vaccination camps for livestock at village level through mobile units.</div>
-      <span class="scheme-tag">Animal Healthcare</span>
-      <span class="scheme-tag dept-tag">🐄 Veterinary</span>
-    </div>
-  </div>
-
-  <!-- Upcoming Schemes -->
-  <div class="schemes-group-label" style="color:#FFB74D;border-color:rgba(255,152,0,0.3);">Upcoming Schemes — CBN Vision Groups</div>
-  <div class="schemes-grid-2">
-    <div class="scheme-card upcoming" data-dept="welfare">
-      <div class="upcoming-badge">UPCOMING</div>
-      <div class="scheme-icon">👥</div>
-      <div class="scheme-name">CBN Vision Groups</div>
-      <div class="scheme-telugu">సీబీఎన్ విజన్ గ్రూప్స్</div>
-      <div class="scheme-desc">Community-level groups to be formed under the vision of CM N. Chandrababu Naidu, focusing on village-level planning, self-employment, skill development, and collective economic progress for rural households.</div>
-      <span class="scheme-tag orange">Village Groups</span>
-      <span class="scheme-tag dept-tag">🤝 Welfare</span>
-    </div>
-    <div class="scheme-card upcoming" data-dept="agriculture">
-      <div class="upcoming-badge">UPCOMING</div>
-      <div class="scheme-icon">🌱</div>
-      <div class="scheme-name">CBN Vision — Rural Livelihood</div>
-      <div class="scheme-telugu">గ్రామీణ జీవనోపాధి</div>
-      <div class="scheme-desc">Planned extension of CBN Vision Groups focusing on micro-enterprise formation, SHG linkage, and financial literacy for women and youth groups in Damagatla village.</div>
-      <span class="scheme-tag orange">Livelihoods</span>
-      <span class="scheme-tag dept-tag">🌾 Agriculture</span>
-    </div>
-  </div>
-</div>
-
-<!-- PRESENT GOING SURVEYS -->
-<div class="surveys-section" id="surveys">
-  <div class="section-title">Present Going Surveys</div>
-  <div class="section-sub">Ongoing government surveys currently being conducted in Damagatla village — residents are requested to cooperate with field staff</div>
-
-  <div class="surveys-grid">
-
-    <!-- WhatsApp Training -->
-    <div class="survey-card">
-      <div class="survey-pulse">ONGOING</div>
-      <div class="survey-icon">📱</div>
-      <div class="survey-name">WhatsApp Mana Mitra</div>
-      <div class="survey-telugu">వాట్సాప్ మన మిత్ర</div>
-      <div class="survey-desc">Digital literacy and awareness training for village residents and staff on the effective use of WhatsApp for receiving government notifications, scheme updates, and important announcements. Focuses on safe usage, avoiding misinformation, and connecting with Panchayat staff online.</div>
-      <div style="margin-top:12px;background:#E8F5E9;border:1px solid #A5D6A7;border-radius:6px;padding:10px 14px;">
-        <div style="font-size:11px;color:#2E7D44;font-family:&#39;Petrona&#39;,serif;font-weight:600;margin-bottom:6px;letter-spacing:0.5px;">🏛️ GOVERNMENT OF ANDHRA PRADESH</div>
-        <a href="https://wa.me/919552300009" target="_blank" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
-          <span style="font-size:18px;">💬</span>
-          <span style="font-family:&#39;Petrona&#39;,serif;font-size:14px;font-weight:600;color:#1A5C2A;">+91 95523 00009</span>
-        </a>
-        <div style="font-size:11px;color:#4A7A5A;margin-top:4px;font-family:&#39;Petrona&#39;,serif;">Tap to open in WhatsApp</div>
-      </div>
-      <div class="survey-meta">
-        <span class="survey-tag">📱 Digital Literacy</span>
-        <span class="survey-tag blue">🌐 Technology</span>
-        <span class="survey-tag">🎓 Training</span>
-        <span class="survey-tag orange">⏳ In Progress</span>
-      </div>
-    </div>
-
-  </div>
-</div>
 
 
 <!-- APPSC GROUP-2 DAILY CURRENT AFFAIRS -->
@@ -992,49 +829,143 @@ footer{background:#17243a!important;color:#d9e1ed!important}
   <div class="section-sub">28 అక్టోబర్ 2026 · తెలుగు మీడియం · Prelims quick revision</div>
   <div class="about-grid">
     <div class="about-card" style="border-left-color:#D4880A;">
-      <h3>🌪️ 1. ఆంధ్రప్రదేశ్ తీరంలో Cyclone Arnab</h3>
-      <p><strong>విషయం:</strong> పర్యావరణం & విపత్తు నిర్వహణ</p>
-      <p>IMD ప్రకారం, అక్టోబర్ 28న Arnab తుఫాను ఆంధ్రప్రదేశ్–యానాం తీర ప్రాంతాన్ని దాటడం ప్రారంభించింది. తీర ప్రాంతాల్లో భారీ వర్షాలు, బలమైన గాలుల నేపథ్యంలో ప్రజలను సురక్షిత ప్రాంతాలకు తరలించారు.</p>
-      <p><strong>Group-2 గుర్తుంచుకోండి:</strong> IMD — భారత వాతావరణ విభాగం; తుఫాన్ల హెచ్చరికలు, వాతావరణ అంచనాలు.</p>
-      <p><a href="https://newsonair.gov.in/?cat=national" target="_blank" rel="noopener noreferrer">మూలం: Akashvani News</a> · <a href="https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2328434&lang=1&reg=1" target="_blank" rel="noopener noreferrer">PIB preparedness update</a></p>
-    </div>
-    <div class="about-card" style="border-left-color:#003F87;">
-      <h3>🛡️ 2. రక్షణ కొనుగోళ్లకు DAC ఆమోదం</h3>
-      <p><strong>విషయం:</strong> జాతీయ భద్రత & ఆర్థిక వ్యవస్థ</p>
-      <p>Defence Acquisition Council (DAC) సుమారు ₹2.12 లక్షల కోట్ల విలువైన రక్షణ కొనుగోలు ప్రతిపాదనలకు ఆమోదం తెలిపినట్లు నేటి కరెంట్ అఫైర్స్ నివేదికలు పేర్కొన్నాయి. దేశీయ పరిశ్రమ నుంచి కొనుగోళ్లకు ప్రాధాన్యం ఇవ్వడం ముఖ్యాంశం.</p>
-      <p><strong>Group-2 గుర్తుంచుకోండి:</strong> DAC = Defence Acquisition Council; రక్షణ కొనుగోళ్లకు సంబంధించిన కీలక సంస్థ.</p>
-      <p><a href="https://upscgurus.in/articles/current-canvas-28-october-2026/" target="_blank" rel="noopener noreferrer">మూలం: Daily current affairs brief</a></p>
-    </div>
-    <div class="about-card" style="border-left-color:#1A5C2A;">
-      <h3>🌐 3. 12వ BRICS Parliamentary Forum</h3>
-      <p><strong>విషయం:</strong> అంతర్జాతీయ సంబంధాలు</p>
-      <p>12వ BRICS పార్లమెంటరీ ఫోరం న్యూఢిల్లీలో అక్టోబర్ 26–27 తేదీల్లో జరిగింది. సమావేశం ముగింపులో New Delhi Joint Declaration ఆమోదించబడినట్లు నివేదికలు తెలిపాయి.</p>
-      <p><strong>Group-2 గుర్తుంచుకోండి:</strong> BRICS అనేది అభివృద్ధి చెందుతున్న ప్రధాన ఆర్థిక వ్యవస్థల మధ్య సహకార వేదిక.</p>
-      <p><a href="https://www.pib.gov.in/AllRelease.aspx?lang=1&reg=1" target="_blank" rel="noopener noreferrer">మూలం: Press Information Bureau (PIB)</a></p>
-    </div>
+  <h3>🏛️ 1. జాతీయ ఐక్యత దినోత్సవం – National Unity Day 2026</h3>
+  <p><strong>విషయం:</strong> భారత చరిత్ర & జాతీయ సమైక్యత</p>
+  <p>అక్టోబర్ 31న సర్దార్ వల్లభ్‌భాయ్ పటేల్ జయంతిని పురస్కరించుకుని దేశవ్యాప్తంగా రాష్ట్రీయ ఏక్తా దివస్ (Rashtriya Ekta Diwas) నిర్వహిస్తారు. 2026లో ఆయన 151వ జయంతి సందర్భంగా గుజరాత్‌లోని ఏక్తా నగర్‌లో ప్రత్యేక కార్యక్రమాలు, ఏక్తా పరేడ్ నిర్వహిస్తున్నారు.</p>
+  <p><strong>APPSC గుర్తుంచుకోండి:</strong> సర్దార్ వల్లభ్‌భాయ్ పటేల్‌ను భారతదేశ ఉక్కు మనిషి (Iron Man of India) అని పిలుస్తారు. భారతదేశ సంస్థానాల విలీనంలో కీలక పాత్ర పోషించారు. ఏక్తా దివస్ ప్రతి సంవత్సరం అక్టోబర్ 31న జరుపుకుంటారు.</p>
+  <p><a href="https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2326165&lang=1&reg=3" target="_blank" rel="noopener noreferrer">మూలం: PIB – Ministry of Home Affairs</a></p>
+</div>
+
+<div class="about-card" style="border-left-color:#003F87;">
+  <h3>🚀 2. ISRO – GSLV-F18 ద్వారా NVS-03 ఉపగ్రహ ప్రయోగం</h3>
+  <p><strong>విషయం:</strong> అంతరిక్ష విజ్ఞానం & సాంకేతికత</p>
+  <p>భారత అంతరిక్ష పరిశోధనా సంస్థ (ISRO) అక్టోబర్ 30, 2026న శ్రీహరికోటలోని సతీష్ ధావన్ అంతరిక్ష కేంద్రం నుంచి GSLV-F18 రాకెట్ ద్వారా NVS-03 నావిగేషన్ ఉపగ్రహాన్ని విజయవంతంగా ప్రయోగించింది. ఇది GSLV వాహక నౌకకు 20వ ప్రయాణం.</p>
+  <p><strong>APPSC గుర్తుంచుకోండి:</strong> NVS-03 అనేది భారత NavIC నావిగేషన్ వ్యవస్థలో మూడవ తరం ఉపగ్రహం. ఇందులో స్వదేశీ అటామిక్ క్లాక్ ఉంది. NavIC భారతదేశానికి సంబంధించిన ప్రాంతీయ నావిగేషన్ వ్యవస్థ.</p>
+  <p><a href="https://www.isro.gov.in/Mission_GSLVF18.html" target="_blank" rel="noopener noreferrer">మూలం: ISRO – GSLV-F18/NVS-03 Mission</a></p>
+</div>
+
+   <div class="about-card" style="border-left-color:#1A5C2A;">
+  <h3>💰 3. Banking for Viksit Bharat – ఉన్నత స్థాయి కమిటీ ఏర్పాటు</h3>
+  <p><strong>విషయం:</strong> భారత ఆర్థిక వ్యవస్థ & బ్యాంకింగ్</p>
+  <p>భారత బ్యాంకింగ్ రంగాన్ని సమీక్షించి అవసరమైన నిర్మాణాత్మక, సంస్థాగత, నియంత్రణ మరియు చట్టపరమైన సంస్కరణలను సూచించేందుకు కేంద్ర ప్రభుత్వం High Level Committee on Banking for Viksit Bharat ను ఏర్పాటు చేసింది.</p>
+  <p>ఈ కమిటీకి మాజీ Central Vigilance Commissioner (CVC) సురేష్ ఎన్. పటేల్ అధ్యక్షత వహిస్తారు. కమిటీ పదవీకాలం ఆరు నెలలు.</p>
+  <p><strong>APPSC గుర్తుంచుకోండి:</strong> కమిటీ లక్ష్యం – 2047 నాటికి అభివృద్ధి చెందిన భారతదేశ లక్ష్యాలకు అనుగుణంగా బ్యాంకింగ్ రంగాన్ని బలోపేతం చేయడం.</p>
+  <p><a href="https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2330598&lang=1&reg=3" target="_blank" rel="noopener noreferrer">మూలం: PIB – Ministry of Finance</a></p>
+</div>
     <div class="about-card" style="border-left-color:#8B5E3C;">
-      <h3>🤝 4. భారత్–కెనడా Migration & Mobility Dialogue</h3>
-      <p><strong>విషయం:</strong> ద్వైపాక్షిక సంబంధాలు</p>
-      <p>న్యూఢిల్లీలో భారత్, కెనడా మధ్య Migration and Mobility Dialogue నిర్వహించినట్లు నేటి వార్తా సమీక్ష పేర్కొంది. విద్యార్థులు, నైపుణ్య కార్మికుల చలనం వంటి అంశాలు చర్చకు వచ్చాయి.</p>
-      <p><strong>Group-2 కోణం:</strong> ద్వైపాక్షిక చర్చలు, వలసలు, నైపుణ్యాభివృద్ధి.</p>
-      <p><a href="https://upscgurus.in/articles/current-canvas-28-october-2026/" target="_blank" rel="noopener noreferrer">మూలం: Daily current affairs brief</a></p>
-    </div>
+  <h3>🌱 4. ప్రధానమంత్రి వికసిత్ గ్రామ స్వరాజ్ యోజన</h3>
+  <p><strong>విషయం:</strong> గ్రామీణాభివృద్ధి & పంచాయతీరాజ్</p>
+  <p>కేంద్ర మంత్రివర్గం Pradhan Mantri Viksit Gram Swaraj Yojana (PM VGSY) కు ఆమోదం తెలిపింది. ఈ పథకం 2026–27 నుంచి 2030–31 వరకు ఐదు సంవత్సరాల పాటు అమలవుతుంది. మొత్తం కేటాయింపు ₹7,395.55 కోట్లు.</p>
+  <p>గ్రామ పంచాయతీల అభివృద్ధి ప్రణాళికలు, డిజిటల్ పాలన, సామర్థ్య నిర్మాణం మరియు ఆర్థిక పారదర్శకతను బలోపేతం చేయడం ఈ పథకం ప్రధాన లక్ష్యం.</p>
+  <p><strong>APPSC గుర్తుంచుకోండి:</strong> గ్రామ పంచాయతీల అభివృద్ధి, స్థానిక స్వపరిపాలన మరియు డిజిటల్ పంచాయతీ పాలన ఈ పథకంలోని ముఖ్యాంశాలు.</p>
+  <p><a href="https://www.pib.gov.in/AllRelease.aspx?lang=1&reg=1" target="_blank" rel="noopener noreferrer">మూలం: PIB – Cabinet Decisions</a></p>
+</div>
+  
     <div class="about-card" style="border-left-color:#1A4A6B;">
-      <h3>🌍 5. WMO Greenhouse Gas Bulletin</h3>
-      <p><strong>విషయం:</strong> పర్యావరణం</p>
-      <p>నేటి వార్తా సమీక్ష ప్రకారం, WMO బులెటిన్‌లో 2025లో వాతావరణంలోని కార్బన్ డయాక్సైడ్ సాంద్రత రికార్డు స్థాయి 426.8 ppmకు చేరినట్లు పేర్కొన్నారు.</p>
-      <p><strong>Group-2 గుర్తుంచుకోండి:</strong> WMO = World Meteorological Organization; ఐక్యరాజ్యసమితి వ్యవస్థలో వాతావరణ సంబంధిత ప్రత్యేక సంస్థ.</p>
-      <p><a href="https://upscgurus.in/articles/current-canvas-28-october-2026/" target="_blank" rel="noopener noreferrer">మూలం: Daily current affairs brief</a></p>
-    </div>
+  <h3>🏗️ 5. ఆంధ్రప్రదేశ్‌లో ₹22,177.84 కోట్ల పెట్టుబడి ప్రతిపాదనలకు ఆమోదం</h3>
+  <p><strong>విషయం:</strong> ఆంధ్రప్రదేశ్ ఆర్థిక వ్యవస్థ & పారిశ్రామిక అభివృద్ధి</p>
+  <p>అక్టోబర్ 31న వెలువడిన APPSC కరెంట్ అఫైర్స్ నివేదిక ప్రకారం, ఆంధ్రప్రదేశ్ క్యాబినెట్ సుమారు ₹22,177.84 కోట్ల పెట్టుబడి ప్రతిపాదనలకు ఆమోదం తెలిపింది. ఈ ప్రాజెక్టుల ద్వారా సుమారు 19,739 ఉద్యోగాలు కల్పించే అవకాశం ఉందని నివేదిక పేర్కొంది.</p>
+  <p>ఇంధనం, పరిశ్రమలు, ఫుడ్ ప్రాసెసింగ్, IT, ఎలక్ట్రానిక్స్, పర్యాటకం మరియు నౌకా నిర్మాణ రంగాలకు సంబంధించిన ప్రతిపాదనలు ఇందులో ఉన్నాయి.</p>
+  <p><strong>APPSC గుర్తుంచుకోండి:</strong> మచిలీపట్నం పోర్టు, అమరావతి మౌలిక సదుపాయాలు, HNSS Phase-II, పోలవరం ఎడమ ప్రధాన కాలువ వంటి అంశాలు రాష్ట్ర ఆర్థిక వ్యవస్థ మరియు మౌలిక సదుపాయాల అభివృద్ధికి ముఖ్యమైనవి.</p>
+  <p><a href="https://kpiasacademy.com/appsc-current-affairs-october-31st-2026/" target="_blank" rel="noopener noreferrer">మూలం: APPSC Current Affairs – 31 October 2026</a></p>
+</div>
+
     <div class="about-card" style="border-left-color:#6A1B9A;">
-      <h3>🔬 6. ESTIC 2026</h3>
-      <p><strong>విషయం:</strong> సైన్స్ & టెక్నాలజీ</p>
-      <p>Emerging Science, Technology and Innovation Conclave (ESTIC) 2026 న్యూఢిల్లీలోని భారత్ మండపంలో ప్రారంభమైనట్లు వార్తా సమీక్ష పేర్కొంది. ఫ్రంటియర్ టెక్నాలజీలు, డీప్-టెక్ స్టార్టప్‌లు ప్రధాన అంశాలు.</p>
-      <p><strong>Group-2 కోణం:</strong> పరిశోధన, ఆవిష్కరణలు, స్టార్టప్‌లు.</p>
-      <p><a href="https://upscgurus.in/articles/current-canvas-28-october-2026/" target="_blank" rel="noopener noreferrer">మూలం: Daily current affairs brief</a></p>
-    </div>
+  <h3>🌐 6. భారత్‌లో Census 2027 సన్నాహాలు</h3>
+  <p><strong>విషయం:</strong> భారత జనాభా గణాంకాలు & పరిపాలన</p>
+  <p>2027 జనాభా గణన కోసం కేంద్ర ప్రభుత్వం డిజిటల్ విధానంలో ఏర్పాట్లు చేస్తోంది. మొబైల్ అప్లికేషన్లు, ఆన్‌లైన్ స్వీయ గణన (Self-Enumeration) మరియు Census Management and Monitoring System వంటి డిజిటల్ సాధనాలను ఉపయోగించనున్నారు.</p>
+  <p><strong>APPSC గుర్తుంచుకోండి:</strong> Census అంటే జనాభా గణన. జనాభా, వయస్సు, విద్య, వలసలు మరియు సామాజిక-ఆర్థిక వివరాల సేకరణకు ఇది ముఖ్యమైనది. Census Act, 1948 ఈ ప్రక్రియకు సంబంధించిన ప్రధాన చట్టం.</p>
+  <p><a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2255461&lang=1&reg=1" target="_blank" rel="noopener noreferrer">మూలం: PIB – Census 2027 Information</a></p>
+</div>
+  </div>
+  
+  
+<div class="section" id="ca-2026">
+<style>
+#ca-2026{max-width:1160px;margin:28px auto;padding:35px 28px;border-radius:18px;border:1px solid #e7eaf0;box-shadow:0 8px 28px #18253b08;background:#fff;color:#17243a}
+#ca-2026 .ca26-head{font-size:22px;font-weight:850;color:#17243a;letter-spacing:-.4px}
+#ca-2026 .ca26-sub{font-size:13px;color:#68758a;margin:6px 0 18px;line-height:1.6}
+#ca-2026 .ca26-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+#ca-2026 .ca26-tab{font:inherit;font-size:12.5px;font-weight:700;color:#47536a;background:#fff;border:1px solid #d6deea;border-radius:20px;padding:8px 14px;cursor:pointer;transition:all .15s}
+#ca-2026 .ca26-tab:hover{border-color:#c62828;color:#c62828;background:#fff7f5}
+#ca-2026 .ca26-tab.active{background:#c62828;border-color:#c62828;color:#fff}
+#ca-2026 .ca26-group{display:none;margin-bottom:26px}
+#ca-2026 .ca26-group.show{display:block}
+#ca-2026 .ca26-gtitle{font-size:17px;font-weight:850;margin:4px 0 12px}
+#ca-2026 .ca26-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+#ca-2026 .ca26-card{background:#fff;border:1px solid #e6eaf0;border-left:4px solid #003F87;border-radius:12px;padding:14px 16px;box-shadow:0 4px 14px #1c2d4408}
+#ca-2026 .ca26-card h4{font-size:14.5px;line-height:1.5;color:#17243a;margin-bottom:6px;display:flex;gap:9px;align-items:flex-start}
+#ca-2026 .ca26-n{flex:0 0 22px;height:22px;border-radius:50%;color:#fff;font-size:11px;font-weight:800;display:grid;place-items:center;margin-top:2px}
+#ca-2026 .ca26-card p{font-size:13.5px;line-height:1.8;color:#4a5568}
+#ca-2026 .ca26-quiz{margin-top:30px;border:1px solid #e6eaf0;border-left:4px solid #003F87;border-radius:12px;padding:18px}
+#ca-2026 .ca26-quiz h3{font-size:16px;color:#003F87;margin-bottom:14px}
+#ca-2026 .ca26-q{margin-bottom:18px}
+#ca-2026 .ca26-q p{font-size:14px;color:#17324D;line-height:1.7;margin-bottom:8px;font-weight:600}
+#ca-2026 .ca26-opt{display:block;width:100%;text-align:left;font:inherit;font-size:13.5px;font-weight:600;color:#17324d;background:#fff;border:1px solid #d6deea;border-radius:9px;padding:9px 12px;margin-bottom:6px;cursor:pointer}
+#ca-2026 .ca26-opt:hover:not(:disabled){background:#fff1ef;border-color:#c62828}
+#ca-2026 .ca26-opt.ok{background:#237647;border-color:#237647;color:#fff}
+#ca-2026 .ca26-opt.no{background:#b4232c;border-color:#b4232c;color:#fff}
+#ca-2026 .ca26-score{font-weight:800;color:#17324D;margin-top:6px}
+#ca-2026 .ca26-reset{font:inherit;font-size:12.5px;font-weight:700;margin-top:10px;padding:8px 14px;border-radius:9px;border:1px solid #c62828;background:#fff;color:#c62828;cursor:pointer}
+#ca-2026 .ca26-note{font-size:12px;color:#68758a;line-height:1.7;margin-top:18px}
+#ca-2026 .ca26-note a{color:#003F87}
+@media(max-width:760px){#ca-2026{margin:18px 12px;padding:23px 16px}#ca-2026 .ca26-grid{grid-template-columns:1fr}}
+</style>
+  <div class="ca26-head">🗓️ 2026 కరెంట్ అఫైర్స్ — జనవరి నుండి అక్టోబర్ వరకు</div>
+  <div class="ca26-sub">APPSC Group-2 · తెలుగు మీడియం · నెలవారీ ముఖ్యాంశాలు + ఆంధ్రప్రదేశ్ ప్రత్యేక అంశాలు · 30 అక్టోబర్ 2026 వరకు తాజా సమాచారం</div>
+  <div class="ca26-tabs" role="tablist"><button class="ca26-tab" data-m="ap" onclick="ca26Show('ap')">🌴 AP ప్రత్యేకం</button><button class="ca26-tab" data-m="jan" onclick="ca26Show('jan')">❄️ జనవరి</button><button class="ca26-tab" data-m="feb" onclick="ca26Show('feb')">🌍 ఫిబ్రవరి</button><button class="ca26-tab" data-m="mar" onclick="ca26Show('mar')">🏏 మార్చి</button><button class="ca26-tab" data-m="apr" onclick="ca26Show('apr')">📊 ఏప్రిల్</button><button class="ca26-tab" data-m="may" onclick="ca26Show('may')">🗳️ మే</button><button class="ca26-tab" data-m="jun" onclick="ca26Show('jun')">⚽ జూన్</button><button class="ca26-tab" data-m="jul" onclick="ca26Show('jul')">🤝 జూలై</button><button class="ca26-tab" data-m="aug" onclick="ca26Show('aug')">🇮🇳 ఆగస్టు</button><button class="ca26-tab" data-m="sep" onclick="ca26Show('sep')">🏅 సెప్టెంబర్</button><button class="ca26-tab active" data-m="oct" onclick="ca26Show('oct')">🏆 అక్టోబర్</button><button class="ca26-tab" data-m="all" onclick="ca26Show('all')">📚 అన్నీ</button></div>
+  <div class="ca26-group" id="ca26-ap" data-m="ap"><div class="ca26-gtitle" style="color:#D4880A">🌴 ఆంధ్రప్రదేశ్ ప్రత్యేకం</div><div class="ca26-grid"><div class="ca26-card" style="border-left-color:#D4880A"><h4><span class="ca26-n" style="background:#D4880A">1</span>అమరావతి — ఏకైక రాజధాని</h4><p>AP పునర్వ్యవస్థీకరణ (సవరణ) చట్టం, 2026 ద్వారా 2014 చట్టంలోని సెక్షన్ 5ను సవరించి అమరావతిని ఏకైక, శాశ్వత రాజధానిగా గుర్తించారు. రాష్ట్ర శాసనసభ 28 మార్చి 2026న తీర్మానం చేసింది; రాష్ట్రపతి ఆమోదం లభించింది.</p></div><div class="ca26-card" style="border-left-color:#D4880A"><h4><span class="ca26-n" style="background:#D4880A">2</span>సౌత్ కోస్ట్ రైల్వే జోన్</h4><p>ప్రధాన కార్యాలయం విశాఖపట్నం. గుంతకల్, గుంటూరు, విజయవాడ డివిజన్లు ఇందులో ఉంటాయి. దేశంలో మొత్తం రైల్వే జోన్లు 19 (మే 2026).</p></div><div class="ca26-card" style="border-left-color:#D4880A"><h4><span class="ca26-n" style="background:#D4880A">3</span>అరకు కౌనీ</h4><p>గిరిజనుల సంప్రదాయ చిరుధాన్యాల ఆధారిత ఆహార మెనూ — రాష్ట్ర ప్రభుత్వం ప్రారంభించింది (మార్చి 2026).</p></div><div class="ca26-card" style="border-left-color:#D4880A"><h4><span class="ca26-n" style="background:#D4880A">4</span>పూల సుబ్బయ్య వెలిగొండ ప్రాజెక్టు — ఫేజ్-I</h4><p>ముఖ్యమంత్రి ఎన్. చంద్రబాబు నాయుడు 31 ఆగస్టు 2026న ప్రారంభించారు; శంకుస్థాపన 5 మార్చి 1996. లబ్ధి: మార్కాపురం, ప్రకాశం, నెల్లూరు, కడప ప్రాంతాలు.</p></div><div class="ca26-card" style="border-left-color:#D4880A"><h4><span class="ca26-n" style="background:#D4880A">5</span>అక్షర ఆంధ్ర — అక్షరాస్యత</h4><p>రాష్ట్ర అక్షరాస్యత 2024లో 72.6% నుంచి 2026లో 82.1%కి పెరిగిందని నివేదిక (జాతీయ సగటు 80.9%). 2027 సెప్టెంబర్ నాటికి 100% లక్ష్యం.</p></div><div class="ca26-card" style="border-left-color:#D4880A"><h4><span class="ca26-n" style="background:#D4880A">6</span>GSDP వృద్ధి</h4><p>2024–26 మధ్య AP GSDP వృద్ధి 11.3% (తెలంగాణ 10.7%). అమరావతికి ₹10,000 కోట్లు, పోలవరానికి ₹8,300 కోట్లు కేటాయింపులు ప్రస్తావించారు.</p></div><div class="ca26-card" style="border-left-color:#D4880A"><h4><span class="ca26-n" style="background:#D4880A">7</span>అమరావతి సంగమం ప్రాజెక్టు</h4><p>సఖమూరు వద్ద ₹759 కోట్లతో — రాష్ట్ర గ్రంథాలయం, ఆడిటోరియం, గ్లోబల్ ఇన్‌స్టిట్యూట్ ఆఫ్ గుడ్ గవర్నెన్స్.</p></div><div class="ca26-card" style="border-left-color:#D4880A"><h4><span class="ca26-n" style="background:#D4880A">8</span>జనాభా విధాన ప్రతిపాదన</h4><p>AP సంతానోత్పత్తి రేటు సుమారు 1.5కి తగ్గింది. మూడో, నాలుగో సంతానానికి నగదు ప్రోత్సాహకాల ప్రతిపాదనపై మే–జూలైలో గ్రామసభల్లో అభిప్రాయ సేకరణ.</p></div><div class="ca26-card" style="border-left-color:#D4880A"><h4><span class="ca26-n" style="background:#D4880A">9</span>నౌకాదళంలో ఆంధ్ర పేర్లు/స్థావరాలు</h4><p>ASW-SWC యుద్ధనౌక ‘మచిలీపట్నం’ (CSL, కొచ్చి) జలప్రవేశం — జూలై. INS మహేంద్రగిరి (ప్రాజెక్ట్ 17A ఆరవ ఫ్రిగేట్) విశాఖలో కమిషన్. INS నిపుణ్ (డైవింగ్ సపోర్ట్ వెసెల్) హిందుస్థాన్ షిప్‌యార్డ్, విశాఖ నిర్మాణం.</p></div><div class="ca26-card" style="border-left-color:#D4880A"><h4><span class="ca26-n" style="background:#D4880A">10</span>పవన్ కళ్యాణ్‌కు జపాన్ గౌరవం</h4><p>కెంజుట్సు (జపనీస్ మార్షల్ ఆర్ట్) లో గౌరవం పొందిన తొలి భారతీయుడు (జనవరి 2026).</p></div><div class="ca26-card" style="border-left-color:#D4880A"><h4><span class="ca26-n" style="background:#D4880A">11</span>సైక్లోన్ ‘అర్నబ్’</h4><p>IMD ప్రకారం AP–యానాం తీర ప్రాంతానికి రెడ్ అలర్ట్; 28 అక్టోబర్ రాత్రి తీరం దాటి బలహీనపడింది. పేరు సూచించిన దేశం: బంగ్లాదేశ్ — పై ‘నేటి కరెంట్ అఫైర్స్’ చూడండి.</p></div></div></div><div class="ca26-group" id="ca26-jan" data-m="jan"><div class="ca26-gtitle" style="color:#003F87">❄️ జనవరి 2026</div><div class="ca26-grid"><div class="ca26-card" style="border-left-color:#003F87"><h4><span class="ca26-n" style="background:#003F87">1</span>77వ గణతంత్ర దినోత్సవం</h4><p>థీమ్: ‘వందే మాతరం 150 సంవత్సరాలు’. ముఖ్య అతిథులు: ఆంటోనియో కోస్టా (యూరోపియన్ కౌన్సిల్), ఉర్సులా వాన్ డెర్ లేయెన్ (యూరోపియన్ కమిషన్). ఉత్తమ మార్చింగ్ కంటింజెంట్ (సేనలు): నౌకాదళం.</p></div><div class="ca26-card" style="border-left-color:#003F87"><h4><span class="ca26-n" style="background:#003F87">2</span>శుభాంశు శుక్లాకు అశోక చక్ర</h4><p>గ్రూప్ కెప్టెన్ శుభాంశు శుక్లా (ISSకు వెళ్లిన తొలి భారతీయుడు) కు శాంతి కాల అత్యున్నత శౌర్య పురస్కారం.</p></div><div class="ca26-card" style="border-left-color:#003F87"><h4><span class="ca26-n" style="background:#003F87">3</span>భారత్–EU స్వేచ్ఛా వాణిజ్య ఒప్పందం</h4><p>దాదాపు రెండు దశాబ్దాల చర్చల తర్వాత 27 జనవరిన సంతకం. భారత్–UAE వాణిజ్యాన్ని 2032 నాటికి $200 బిలియన్లకు పెంచే లక్ష్యం కూడా.</p></div><div class="ca26-card" style="border-left-color:#003F87"><h4><span class="ca26-n" style="background:#003F87">4</span>అమెరికా WHO నుంచి వైదొలగింది</h4><p>ఏడాది నోటీసు కాలం పూర్తయ్యాక. WHO ప్రధాన కార్యాలయం: జెనీవా.</p></div><div class="ca26-card" style="border-left-color:#003F87"><h4><span class="ca26-n" style="background:#003F87">5</span>బల్గేరియా — యూరోజోన్ 21వ సభ్యదేశం</h4><p>లెవ్ స్థానంలో యూరో. UN 2026ను ‘అంతర్జాతీయ రేంజ్‌ల్యాండ్స్ &amp; పశుపోషకుల సంవత్సరం’గా ప్రకటించింది.</p></div><div class="ca26-card" style="border-left-color:#003F87"><h4><span class="ca26-n" style="background:#003F87">6</span>పంజాబ్ ముఖ్యమంత్రి సెహత్ యోజన</h4><p>కుటుంబానికి ₹10 లక్షల వరకు నగదురహిత వైద్యం.</p></div><div class="ca26-card" style="border-left-color:#003F87"><h4><span class="ca26-n" style="background:#003F87">7</span>పురస్కారాలు</h4><p>ఇందిరా గాంధీ శాంతి బహుమతి 2025: గ్రాసా మాచెల్. 131 పద్మ అవార్డులు ప్రకటన.</p></div><div class="ca26-card" style="border-left-color:#003F87"><h4><span class="ca26-n" style="background:#003F87">8</span>క్రీడలు</h4><p>విరాట్ కోహ్లీ అంతర్జాతీయ క్రికెట్‌లో రెండో అత్యధిక పరుగుల వీరుడు (సంగక్కరను అధిగమించాడు; సచిన్ 34,357). సైనా నెహ్వాల్ రిటైర్మెంట్.</p></div><div class="ca26-card" style="border-left-color:#003F87"><h4><span class="ca26-n" style="background:#003F87">9</span>స్మరణ</h4><p>మహారాష్ట్ర ఉప ముఖ్యమంత్రి అజిత్ పవార్ బారామతి వద్ద విమాన ప్రమాదంలో మృతి. బంగ్లాదేశ్ తొలి మహిళా ప్రధాని ఖలీదా జియా మరణం.</p></div></div></div><div class="ca26-group" id="ca26-feb" data-m="feb"><div class="ca26-gtitle" style="color:#1A5C2A">🌍 ఫిబ్రవరి 2026</div><div class="ca26-grid"><div class="ca26-card" style="border-left-color:#1A5C2A"><h4><span class="ca26-n" style="background:#1A5C2A">1</span>India AI Impact Summit 2026</h4><p>గ్లోబల్ సౌత్‌లో జరిగిన తొలి ప్రపంచ AI సదస్సు; భారత్ మండపం, న్యూఢిల్లీ. మూడు ‘సూత్రాలు’: People, Planet, Progress. థీమ్: ‘సర్వజన హితాయ, సర్వజన సుఖాయ’.</p></div><div class="ca26-card" style="border-left-color:#1A5C2A"><h4><span class="ca26-n" style="background:#1A5C2A">2</span>కేరళ → ‘కేరళం’</h4><p>రాష్ట్రం పేరు మార్పు ప్రతిపాదనకు కేంద్ర మంత్రివర్గ ఆమోదం (రాజ్యాంగ అధికరణ 3 ప్రకారం పార్లమెంటు చట్టం అవసరం).</p></div><div class="ca26-card" style="border-left-color:#1A5C2A"><h4><span class="ca26-n" style="background:#1A5C2A">3</span>ప్రధాని మోదీకి ఇజ్రాయెల్ గౌరవం</h4><p>‘స్పీకర్ ఆఫ్ ది నెసెట్ మెడల్’ — ఈ గౌరవం పొందిన తొలి ప్రపంచ నేత.</p></div><div class="ca26-card" style="border-left-color:#1A5C2A"><h4><span class="ca26-n" style="background:#1A5C2A">4</span>నమో భారత్ RRTS</h4><p>ఢిల్లీ–మీరట్ 82 కి.మీ. కారిడార్ ప్రారంభం. సబర్మతిలో తొలి LNG–డీజిల్ ద్వంద్వ ఇంధన DEMU రైలు.</p></div><div class="ca26-card" style="border-left-color:#1A5C2A"><h4><span class="ca26-n" style="background:#1A5C2A">5</span>రక్షణ</h4><p>MILAN-2026 (13వ ఎడిషన్, 74 దేశాలు). నౌకాదళం CTF-154 నాయకత్వం చేపట్టింది. INS అంజదీప్ కమిషన్.</p></div><div class="ca26-card" style="border-left-color:#1A5C2A"><h4><span class="ca26-n" style="background:#1A5C2A">6</span>శీతాకాల ఒలింపిక్స్</h4><p>35వ ఎడిషన్ — మిలాన్–కోర్టినా (ఇటలీ). నార్వే అగ్రస్థానం. తదుపరి: 2030, ఫ్రెంచ్ ఆల్ప్స్.</p></div><div class="ca26-card" style="border-left-color:#1A5C2A"><h4><span class="ca26-n" style="background:#1A5C2A">7</span>నివేదికలు</h4><p>Corruption Perceptions Index 2025: డెన్మార్క్ (89) అగ్రస్థానం; భారత్ 91వ ర్యాంక్. Women, Peace &amp; Security Index: భారత్ 131.</p></div><div class="ca26-card" style="border-left-color:#1A5C2A"><h4><span class="ca26-n" style="background:#1A5C2A">8</span>పాకిస్తాన్–అఫ్ఘానిస్తాన్ ఘర్షణ</h4><p>పాక్ ‘ఆపరేషన్ గజబ్ లిల్ హక్’ పేరుతో కాబూల్ సహా అఫ్ఘాన్ లక్ష్యాలపై వైమానిక దాడులు.</p></div><div class="ca26-card" style="border-left-color:#1A5C2A"><h4><span class="ca26-n" style="background:#1A5C2A">9</span>అవార్డులు</h4><p>BBC ఇండియన్ స్పోర్ట్స్‌ఉమన్ ఆఫ్ ది ఇయర్ 2025: స్మృతి మంధాన. BAFTA చిల్డ్రన్స్ ఫిల్మ్ అవార్డు గెలిచిన తొలి భారతీయ చిత్రం ‘Boong’ (మణిపురి).</p></div></div></div><div class="ca26-group" id="ca26-mar" data-m="mar"><div class="ca26-gtitle" style="color:#8B5E3C">🏏 మార్చి 2026</div><div class="ca26-grid"><div class="ca26-card" style="border-left-color:#8B5E3C"><h4><span class="ca26-n" style="background:#8B5E3C">1</span>ICC పురుషుల T20 ప్రపంచ కప్ 2026</h4><p>భారత్ విజేత (మూడో టైటిల్) — ఫైనల్‌లో న్యూజిలాండ్‌పై. స్వదేశంలో గెలిచిన, టైటిల్ నిలబెట్టుకున్న తొలి జట్టు. ప్లేయర్ ఆఫ్ ది సిరీస్: సంజూ శాంసన్. ఆతిథ్యం: భారత్ &amp; శ్రీలంక.</p></div><div class="ca26-card" style="border-left-color:#8B5E3C"><h4><span class="ca26-n" style="background:#8B5E3C">2</span>ఇరాన్–ఇజ్రాయెల్–అమెరికా యుద్ధం</h4><p>పశ్చిమాసియాలో ఉద్రిక్తత; హార్ముజ్ జలసంధి నియంత్రణ, చమురు ధరల పెరుగుదల; వ్యూహాత్మక నిల్వల విడుదల.</p></div><div class="ca26-card" style="border-left-color:#8B5E3C"><h4><span class="ca26-n" style="background:#8B5E3C">3</span>గుజరాత్ — UCC</h4><p>ఉత్తరాఖండ్ తర్వాత ఏకరూప పౌరస్మృతి అమలు చేసే రెండో రాష్ట్రం (అధికరణ 44).</p></div><div class="ca26-card" style="border-left-color:#8B5E3C"><h4><span class="ca26-n" style="background:#8B5E3C">4</span>ట్రాన్స్‌జెండర్ (హక్కుల రక్షణ) సవరణ బిల్లు 2026</h4><p>పార్లమెంటు ఆమోదం; స్వీయ-గుర్తింపు నిబంధన తొలగింపు. (NALSA vs UoI, 2014 తీర్పు నేపథ్యం.)</p></div><div class="ca26-card" style="border-left-color:#8B5E3C"><h4><span class="ca26-n" style="background:#8B5E3C">5</span>ఆదాయపు పన్ను నిబంధనలు 2026</h4><p>అమలులోకి; నియమాల సంఖ్య తగ్గింపు, స్టాక్ ఎక్స్ఛేంజీలకు ఏడేళ్ల ఆడిట్ ట్రైల్.</p></div><div class="ca26-card" style="border-left-color:#8B5E3C"><h4><span class="ca26-n" style="background:#8B5E3C">6</span>అంతర్జాతీయం</h4><p>ఇండోనేషియా — 16 ఏళ్లలోపు పిల్లలకు సోషల్ మీడియా నిషేధం (దక్షిణాసియాలో తొలి దేశం). జపాన్ — ప్రపంచ తొలి ‘ఫ్రైట్ బుల్లెట్ ట్రైన్’.</p></div><div class="ca26-card" style="border-left-color:#8B5E3C"><h4><span class="ca26-n" style="background:#8B5E3C">7</span>రాష్ట్రాలు</h4><p>మహారాష్ట్ర మత స్వేచ్ఛా బిల్లు 2026. ఒడిశా తొలి స్మార్ట్ విలేజ్: కుసున్‌పూర్ (CSIR). ఇతర నియామకాలు: బెంగాల్ గవర్నర్ ఆర్.ఎన్. రవి; లద్దాఖ్ LG వినయ్ కుమార్ సక్సేనా.</p></div><div class="ca26-card" style="border-left-color:#8B5E3C"><h4><span class="ca26-n" style="background:#8B5E3C">8</span>ఆస్కార్ 2026 (98వ)</h4><p>ఉత్తమ చిత్రం: One Battle After Another; ఉత్తమ నటుడు: మైఖేల్ బి. జోర్డాన్; ఉత్తమ నటి: జెస్సీ బక్లీ.</p></div><div class="ca26-card" style="border-left-color:#8B5E3C"><h4><span class="ca26-n" style="background:#8B5E3C">9</span>పథకం &amp; ర్యాంకింగ్</h4><p>PM శ్రమ యోగి మాన్‌ధన్ (₹3,000 పింఛను, 60 ఏళ్ల తర్వాత).</p></div></div></div><div class="ca26-group" id="ca26-apr" data-m="apr"><div class="ca26-gtitle" style="color:#6A1B9A">📊 ఏప్రిల్ 2026</div><div class="ca26-grid"><div class="ca26-card" style="border-left-color:#6A1B9A"><h4><span class="ca26-n" style="background:#6A1B9A">1</span>జనాభా లెక్కలు 2027 ప్రారంభం</h4><p>తొలి డిజిటల్ డేటా సేకరణ + స్వీయ-గణన (16 భాషల్లో వెబ్ సదుపాయం). మస్కట్లు: ‘ప్రగతి’, ‘వికాస్’.</p></div><div class="ca26-card" style="border-left-color:#6A1B9A"><h4><span class="ca26-n" style="background:#6A1B9A">2</span>హార్ముజ్ జలసంధి</h4><p>UNSC తీర్మానంపై రష్యా, చైనా వీటో (బహ్రెయిన్ ప్రతిపాదన; 11 అనుకూలం, 2 వ్యతిరేకం, 2 గైర్హాజరు). పాకిస్తాన్ మధ్యవర్తిత్వంతో అమెరికా–ఇరాన్ రెండు వారాల కాల్పుల విరమణ.</p></div><div class="ca26-card" style="border-left-color:#6A1B9A"><h4><span class="ca26-n" style="background:#6A1B9A">3</span>రక్షణ</h4><p>INS తారాగిరి (ప్రాజెక్ట్ 17A నాలుగో ఫ్రిగేట్) కమిషన్. INS అరిధమాన్ — మూడో స్వదేశీ SSBN (అరిహంత్, అరిఘాత్ తర్వాత).</p></div><div class="ca26-card" style="border-left-color:#6A1B9A"><h4><span class="ca26-n" style="background:#6A1B9A">4</span>99వ రామ్‌సర్ ప్రదేశం</h4><p>షేఖా జీల్ పక్షి సంరక్షణ కేంద్రం (అలీగఢ్, ఉత్తరప్రదేశ్) — UPలో మొత్తం 12.</p></div><div class="ca26-card" style="border-left-color:#6A1B9A"><h4><span class="ca26-n" style="background:#6A1B9A">5</span>రాష్ట్రాలు</h4><p>లద్దాఖ్‌లో 5 కొత్త జిల్లాలు (నుబ్రా, శామ్, చాంగ్‌థాంగ్, జన్స్కార్, ద్రాస్) → మొత్తం 7. మేఘాలయ — ఖాసీ, గారో అధికార భాషలు.</p></div><div class="ca26-card" style="border-left-color:#6A1B9A"><h4><span class="ca26-n" style="background:#6A1B9A">6</span>క్రీడలు</h4><p>తొలి ఖేలో ఇండియా ట్రైబల్ గేమ్స్ (ఛత్తీస్‌గఢ్; కర్ణాటక అగ్రస్థానం). IPL 2026లో పలు రికార్డులు (265 పరుగుల ఛేదన).</p></div><div class="ca26-card" style="border-left-color:#6A1B9A"><h4><span class="ca26-n" style="background:#6A1B9A">7</span>నియామకాలు</h4><p>లెఫ్ట్‌నెంట్ జనరల్ ధీరజ్ సేత్ — ఆర్మీ వైస్ చీఫ్. అశ్వినీ భిడే — BMC తొలి మహిళా కమిషనర్. అశోక్ లాహిరి — NITI ఆయోగ్ ఉపాధ్యక్షుడు.</p></div><div class="ca26-card" style="border-left-color:#6A1B9A"><h4><span class="ca26-n" style="background:#6A1B9A">8</span>అంతర్జాతీయం</h4><p>UK ‘Tobacco and Vapes Bill’ ఆమోదం (2009 జనవరి 1 తర్వాత పుట్టినవారికి సిగరెట్ల అమ్మకం నిషేధం). టర్కీ — 15 ఏళ్లలోపు సోషల్ మీడియా పరిమితులు.</p></div><div class="ca26-card" style="border-left-color:#6A1B9A"><h4><span class="ca26-n" style="background:#6A1B9A">9</span>పురస్కారాలు</h4><p>Laureus: అల్కరాజ్ (Sportsman), సబలెంకా (Sportswoman), PSG (Team of the Year). Femina Miss India World: సాధ్వి సతీష్ సాయి (గోవా).</p></div></div></div><div class="ca26-group" id="ca26-may" data-m="may"><div class="ca26-gtitle" style="color:#B71C1C">🗳️ మే 2026</div><div class="ca26-grid"><div class="ca26-card" style="border-left-color:#B71C1C"><h4><span class="ca26-n" style="background:#B71C1C">1</span>శాసనసభ ఎన్నికలు — ముఖ్యమంత్రులు</h4><p>పశ్చిమ బెంగాల్: సువేందు అధికారి; తమిళనాడు: సి. జోసెఫ్ విజయ్; కేరళ: వి.డి. సతీశన్; అస్సాం: హిమంత బిశ్వ శర్మ; పుదుచ్చేరి: ఎన్. రంగసామి.</p></div><div class="ca26-card" style="border-left-color:#B71C1C"><h4><span class="ca26-n" style="background:#B71C1C">2</span>కొత్త రక్షణ నాయకత్వం</h4><p>CDS: లెఫ్ట్‌నెంట్ జనరల్ ఎన్.ఎస్. రాజా సుబ్రమణి. నౌకాదళ చీఫ్: వైస్ అడ్మిరల్ కృష్ణ స్వామినాథన్.</p></div><div class="ca26-card" style="border-left-color:#B71C1C"><h4><span class="ca26-n" style="background:#B71C1C">3</span>సుప్రీంకోర్టు న్యాయమూర్తుల సంఖ్య</h4><p>33 నుంచి 37కి పెంపు (CJI మినహా) — సవరణ బిల్లు ప్రతిపాదనకు రాష్ట్రపతి అనుమతి.</p></div><div class="ca26-card" style="border-left-color:#B71C1C"><h4><span class="ca26-n" style="background:#B71C1C">4</span>చక్కెర ఎగుమతుల నిషేధం</h4><p>అన్ని రకాల చక్కెర ఎగుమతి 30 సెప్టెంబర్ 2026 వరకు నిషేధం (ఎల్ నినో అంచనాలు, ధరల నియంత్రణ).</p></div><div class="ca26-card" style="border-left-color:#B71C1C"><h4><span class="ca26-n" style="background:#B71C1C">5</span>సిక్కిం — తొలి పేపర్‌లెస్ న్యాయవ్యవస్థ రాష్ట్రం</h4><p>గాంగ్‌టక్‌లో CJI సూర్యకాంత్ ప్రకటన.</p></div><div class="ca26-card" style="border-left-color:#B71C1C"><h4><span class="ca26-n" style="background:#B71C1C">6</span>అంతర్జాతీయం</h4><p>శాంటా మార్టా (కొలంబియా) — శిలాజ ఇంధనాల నుంచి మారడంపై తొలి అంతర్జాతీయ సదస్సు. సౌదీ అరేబియా — IBCA 26వ సభ్యదేశం. ఎబోలా — WHO ప్రపంచ ఆరోగ్య అత్యవసర పరిస్థితి (DR కాంగో, ఉగాండా).</p></div><div class="ca26-card" style="border-left-color:#B71C1C"><h4><span class="ca26-n" style="background:#B71C1C">7</span>IPL 2026 (19వ ఎడిషన్)</h4><p>వైభవ్ సూర్యవంశీ 65 సిక్సర్లు (గేల్ 59 రికార్డ్ బ్రేక్). కె.ఎల్. రాహుల్ 152* — IPLలో భారతీయుని అత్యధిక స్కోరు.</p></div><div class="ca26-card" style="border-left-color:#B71C1C"><h4><span class="ca26-n" style="background:#B71C1C">8</span>బ్యాడ్మింటన్</h4><p>థామస్ కప్: చైనా. ఉబర్ కప్: దక్షిణ కొరియా (ఆతిథ్యం: డెన్మార్క్).</p></div><div class="ca26-card" style="border-left-color:#B71C1C"><h4><span class="ca26-n" style="background:#B71C1C">9</span>గౌరవాలు</h4><p>ప్రధాని మోదీకి నార్వే, స్వీడన్ అత్యున్నత పౌర గౌరవాలు. ఇంటర్నేషనల్ బుకర్ 2026: యాంగ్ షువాంగ్-జీ (తైవాన్), ‘Taiwan Travelogue’. Henley Passport Index: భారత్ 78వ ర్యాంక్.</p></div></div></div><div class="ca26-group" id="ca26-jun" data-m="jun"><div class="ca26-gtitle" style="color:#0D47A1">⚽ జూన్ 2026</div><div class="ca26-grid"><div class="ca26-card" style="border-left-color:#0D47A1"><h4><span class="ca26-n" style="background:#0D47A1">1</span>అమెరికా–ఇరాన్ మధ్యంతర ఒప్పందం</h4><p>‘ఇస్లామాబాద్ MoU’ — 14 అంశాల శాంతి ఒప్పందం; పాకిస్తాన్ మధ్యవర్తిత్వం; 60 రోజుల చర్చల ప్రక్రియ; అమెరికా నౌకా దిగ్బంధం ఎత్తివేత.</p></div><div class="ca26-card" style="border-left-color:#0D47A1"><h4><span class="ca26-n" style="background:#0D47A1">2</span>52వ G7 సదస్సు</h4><p>ఆతిథ్యం: ఫ్రాన్స్ (మూడు రోజులు).</p></div><div class="ca26-card" style="border-left-color:#0D47A1"><h4><span class="ca26-n" style="background:#0D47A1">3</span>FIFA ప్రపంచ కప్ 2026</h4><p>విజేత: స్పెయిన్; రన్నరప్: అర్జెంటీనా. ఆతిథ్యం: అమెరికా, కెనడా, మెక్సికో. క్రిస్టియానో రొనాల్డో — ఆరు ప్రపంచ కప్పుల్లో గోల్ చేసిన తొలి ఆటగాడు.</p></div><div class="ca26-card" style="border-left-color:#0D47A1"><h4><span class="ca26-n" style="background:#0D47A1">4</span>సుప్రీంకోర్టు తీర్పు</h4><p>ఫుట్‌పాత్‌పై నడిచే హక్కు ప్రాథమిక హక్కు (అధికరణ 19(1)(d), 21).</p></div><div class="ca26-card" style="border-left-color:#0D47A1"><h4><span class="ca26-n" style="background:#0D47A1">5</span>NITI ఆయోగ్ 11వ పాలకమండలి సమావేశం</h4><p>రాష్ట్రపతి భవన్; థీమ్: ‘Inclusive Human Development for Viksit Bharat @2047’.</p></div><div class="ca26-card" style="border-left-color:#0D47A1"><h4><span class="ca26-n" style="background:#0D47A1">6</span>తొలి ఆఫ్‌షోర్ విమానాశ్రయం</h4><p>మహారాష్ట్ర పాల్ఘర్ తీరంలో నిర్మాణానికి ఆమోదం.</p></div><div class="ca26-card" style="border-left-color:#0D47A1"><h4><span class="ca26-n" style="background:#0D47A1">7</span>ఆపరేషన్ అమిస్తాద్</h4><p>వెనిజులా భూకంప బాధితులకు భారత్ మానవతా సహాయం (IAF C-17 విమానాలు).</p></div><div class="ca26-card" style="border-left-color:#0D47A1"><h4><span class="ca26-n" style="background:#0D47A1">8</span>పద్మ అవార్డుల ప్రదానం</h4><p>రాష్ట్రపతి 65 పద్మ పురస్కారాలు ప్రదానం చేశారు (2 విభూషణ్, 7 భూషణ్, 56 శ్రీ).</p></div><div class="ca26-card" style="border-left-color:#0D47A1"><h4><span class="ca26-n" style="background:#0D47A1">9</span>ర్యాంకింగ్స్</h4><p>QS WUR 2027: భారత్ నుంచి 52 సంస్థలు; అగ్రస్థానం IIT ఢిల్లీ (118వ). QS Future Skills Index: భారత్ 13వ స్థానం.</p></div><div class="ca26-card" style="border-left-color:#0D47A1"><h4><span class="ca26-n" style="background:#0D47A1">10</span>క్రీడలు</h4><p>FIH ఉమెన్స్ నేషన్స్ కప్ — భారత్ విజేత (FIH ప్రో లీగ్‌కు అర్హత). ICC మహిళల T20 ప్రపంచ కప్ ఇంగ్లాండ్‌లో.</p></div></div></div><div class="ca26-group" id="ca26-jul" data-m="jul"><div class="ca26-gtitle" style="color:#00695C">🤝 జూలై 2026</div><div class="ca26-grid"><div class="ca26-card" style="border-left-color:#00695C"><h4><span class="ca26-n" style="background:#00695C">1</span>భారత్–UK CETA అమలులోకి</h4><p>UK మార్కెట్‌లో 99% టారిఫ్ లైన్లకు భారత ఎగుమతులకు సున్నా సుంకం.</p></div><div class="ca26-card" style="border-left-color:#00695C"><h4><span class="ca26-n" style="background:#00695C">2</span>కర్తవ్య భవన్ కాంప్లెక్స్</h4><p>సెంట్రల్ విస్టా పునరభివృద్ధి ప్రాంతానికి ఈ పేరు.</p></div><div class="ca26-card" style="border-left-color:#00695C"><h4><span class="ca26-n" style="background:#00695C">3</span>విద్యా సంస్కరణల టాస్క్ ఫోర్స్</h4><p>నందన్ నీలేకని నేతృత్వం; పరీక్షల సంస్కరణలపై దృష్టి (సభ్యులు: ఎస్. సోమనాథ్, వి. కామకోటి తదితరులు).</p></div><div class="ca26-card" style="border-left-color:#00695C"><h4><span class="ca26-n" style="background:#00695C">4</span>ఫ్రాన్స్ — 15 ఏళ్లలోపు సోషల్ మీడియా నిషేధం</h4><p>EUలో ఇటువంటి సమగ్ర నిషేధం ఆమోదించిన తొలి దేశం.</p></div><div class="ca26-card" style="border-left-color:#00695C"><h4><span class="ca26-n" style="background:#00695C">5</span>భారత్ → నేపాల్ తొలి వాణిజ్య కంటైనర్ ఫ్రైట్ రైలు</h4><p>కోల్‌కతా పోర్ట్ నుంచి బిరాత్‌నగర్ వరకు, ట్రాన్స్‌షిప్‌మెంట్ లేకుండా.</p></div><div class="ca26-card" style="border-left-color:#00695C"><h4><span class="ca26-n" style="background:#00695C">6</span>రక్షణ</h4><p>INS మహేంద్రగిరి (P-17A ఆరవది) విశాఖలో కమిషన్. ఆపరేషన్ సదరన్ రెడినెస్ 26-2 (కొచ్చి, CTF-154).</p></div><div class="ca26-card" style="border-left-color:#00695C"><h4><span class="ca26-n" style="background:#00695C">7</span>కామన్వెల్త్ క్రీడలు 2026</h4><p>గ్లాస్గో (స్కాట్లాండ్)లో ప్రారంభం; మస్కట్ ‘ఫిన్నీ’ (యునికార్న్). గాబన్, టోగో తొలిసారి.</p></div><div class="ca26-card" style="border-left-color:#00695C"><h4><span class="ca26-n" style="background:#00695C">8</span>బ్యాడ్మింటన్</h4><p>పి.వి. సింధు — జపాన్ ఓపెన్ మహిళల సింగిల్స్ విజేత (అకానే యమగూచిపై).</p></div><div class="ca26-card" style="border-left-color:#00695C"><h4><span class="ca26-n" style="background:#00695C">9</span>SOFI 2026 నివేదిక</h4><p>ప్రపంచంలో ఆకలితో ఉన్నవారు 64.5 కోట్లు (7.8%) — వరుసగా మూడో ఏడాది తగ్గుదల. 2.7 బిలియన్ల మందికి ఆరోగ్యకరమైన ఆహారం భరించలేనిది.</p></div><div class="ca26-card" style="border-left-color:#00695C"><h4><span class="ca26-n" style="background:#00695C">10</span>గౌరవం</h4><p>ప్రధాని మోదీకి ఇండోనేషియా అత్యున్నత పౌర గౌరవం ‘Bintang Adipurna’.</p></div></div></div><div class="ca26-group" id="ca26-aug" data-m="aug"><div class="ca26-gtitle" style="color:#E65100">🇮🇳 ఆగస్టు 2026</div><div class="ca26-grid"><div class="ca26-card" style="border-left-color:#E65100"><h4><span class="ca26-n" style="background:#E65100">1</span>80వ స్వాతంత్ర్య దినోత్సవం</h4><p>థీమ్: ‘యువ శక్తి: Viksit Bharat @2047 వైపు ప్రయాణం’; ‘వందే మాతరం’ 150 ఏళ్ల సందర్భం.</p></div><div class="ca26-card" style="border-left-color:#E65100"><h4><span class="ca26-n" style="background:#E65100">2</span>కామన్వెల్త్ క్రీడలు 2026 (గ్లాస్గో)</h4><p>ఆస్ట్రేలియా అగ్రస్థానం; భారత్ 4వ స్థానం (13 స్వర్ణ, 17 రజత, 9 కాంస్య). బాక్సింగ్‌లో 10 పతకాలు (7 స్వర్ణాలు). మీరాబాయి చాను మూడో వరుస స్వర్ణం.</p></div><div class="ca26-card" style="border-left-color:#E65100"><h4><span class="ca26-n" style="background:#E65100">3</span>అరుణాచల్ ప్రదేశ్ తొలి రామ్‌సర్ ప్రదేశం</h4><p>గ్లావ్ సరస్సు (కమ్లాంగ్ టైగర్ రిజర్వ్) — భారత్‌లో 101వది.</p></div><div class="ca26-card" style="border-left-color:#E65100"><h4><span class="ca26-n" style="background:#E65100">4</span>నౌరూ → నావోరో</h4><p>ప్రపంచంలో మూడో అతి చిన్న దేశం పేరు ‘Republic of Naoero’గా మార్పు; కోడ్ NRO.</p></div><div class="ca26-card" style="border-left-color:#E65100"><h4><span class="ca26-n" style="background:#E65100">5</span>హార్ముజ్ జలసంధి</h4><p>ఇరాన్–ఒమన్ 60 రోజులు తిరిగి తెరవడానికి అవగాహన.</p></div><div class="ca26-card" style="border-left-color:#E65100"><h4><span class="ca26-n" style="background:#E65100">6</span>UNCCD COP17</h4><p>ఉలాన్‌బాతర్ (మంగోలియా); భారత గడ్డిభూముల తొలి గైడ్ విడుదల.</p></div><div class="ca26-card" style="border-left-color:#E65100"><h4><span class="ca26-n" style="background:#E65100">7</span>రక్షణ</h4><p>మొదటి స్వదేశీ AK-203 రైఫిల్ ‘షేర్’ (అమేథీ, కోర్వా). INS నిపుణ్ కమిషన్. భారత్–అమెరికా EOD వ్యాయామం (కొచ్చి).</p></div><div class="ca26-card" style="border-left-color:#E65100"><h4><span class="ca26-n" style="background:#E65100">8</span>క్రీడలు</h4><p>FIH హాకీ ప్రపంచ కప్ (బెల్జియం–నెదర్లాండ్స్): పురుషులు బెల్జియం, మహిళలు అర్జెంటీనా; భారత్ 8వ/5వ. ప్రజ్ఞానంద — Grand Chess Tour గెలిచిన తొలి భారతీయుడు.</p></div><div class="ca26-card" style="border-left-color:#E65100"><h4><span class="ca26-n" style="background:#E65100">9</span>పురస్కారాలు</h4><p>డిరాక్ మెడల్ 2026: ప్రొ. దీపక్ ధర్. ప్రధాని మోదీకి ఉజ్బెకిస్తాన్ అత్యున్నత పురస్కారం.</p></div></div></div><div class="ca26-group" id="ca26-sep" data-m="sep"><div class="ca26-gtitle" style="color:#4527A0">🏅 సెప్టెంబర్ 2026</div><div class="ca26-grid"><div class="ca26-card" style="border-left-color:#4527A0"><h4><span class="ca26-n" style="background:#4527A0">1</span>18వ BRICS సదస్సు</h4><p>న్యూఢిల్లీ ఆతిథ్యం; థీమ్: ‘Building for Resilience, Innovation, Cooperation and Sustainability’; ‘న్యూఢిల్లీ డిక్లరేషన్’ ఆమోదం.</p></div><div class="ca26-card" style="border-left-color:#4527A0"><h4><span class="ca26-n" style="background:#4527A0">2</span>26వ SCO సదస్సు</h4><p>బిష్కెక్ (కిర్గిజ్‌స్తాన్). లాహోర్‌కు ‘టూరిజం &amp; కల్చరల్ క్యాపిటల్’ హోదా. 2026–27 SCO అధ్యక్షత: పాకిస్తాన్.</p></div><div class="ca26-card" style="border-left-color:#4527A0"><h4><span class="ca26-n" style="background:#4527A0">3</span>ఆసియా క్రీడలు 2026 (20వ)</h4><p>ఐచి–నగోయా (జపాన్). భారత్ 85 పతకాలతో 4వ స్థానం. ప్రారంభోత్సవ పతాకధారులు: పవన్ సెహ్రావత్, మను భాకర్.</p></div><div class="ca26-card" style="border-left-color:#4527A0"><h4><span class="ca26-n" style="background:#4527A0">4</span>చెస్ ఒలింపియాడ్ (46వ)</h4><p>సమర్‌ఖండ్ (ఉజ్బెకిస్తాన్); ఉజ్బెకిస్తాన్ అగ్రస్థానం; భారత పురుషులకు రజతం, మహిళలకు కాంస్యం.</p></div><div class="ca26-card" style="border-left-color:#4527A0"><h4><span class="ca26-n" style="background:#4527A0">5</span>72వ జాతీయ చలనచిత్ర అవార్డులు</h4><p>దాదాసాహెబ్ ఫాల్కే: అనంత్ నాగ్. ఉత్తమ చిత్రం: Article 370. ఉత్తమ ప్రజాదరణ చిత్రం: ‘కల్కి 2898 AD’ (తెలుగు). ఉత్తమ నటులు: మమ్ముట్టి, కార్తీక్ ఆర్యన్.</p></div><div class="ca26-card" style="border-left-color:#4527A0"><h4><span class="ca26-n" style="background:#4527A0">6</span>ఆస్కార్ 2027 భారత ఎంట్రీ</h4><p>‘గోంధల్’ (మరాఠీ) — 99వ అకాడమీ అవార్డులు.</p></div><div class="ca26-card" style="border-left-color:#4527A0"><h4><span class="ca26-n" style="background:#4527A0">7</span>కర్ణాటక — తులు రెండో అధికార భాష</h4><p>దక్షిణ కన్నడ, ఉడుపి జిల్లాల్లో (అధికరణ 345).</p></div><div class="ca26-card" style="border-left-color:#4527A0"><h4><span class="ca26-n" style="background:#4527A0">8</span>ఆసియా తొలి టెలికాం తయారీ జోన్</h4><p>గ్వాలియర్ (మధ్యప్రదేశ్).</p></div><div class="ca26-card" style="border-left-color:#4527A0"><h4><span class="ca26-n" style="background:#4527A0">9</span>ఇతర</h4><p>స్మృతి మంధాన — మహిళల T20Iల్లో అత్యధిక పరుగులు. NITI: India Electric Mobility Index 2025లో ఢిల్లీ అగ్రస్థానం. రాజస్థాన్‌లోని షెఖావతి ‘పెయింటెడ్ హవేలీ టౌన్స్’ UNESCO తాత్కాలిక జాబితాలో చేరింది. లద్దాఖ్‌లో ప్రపంచ ఎత్తైన పూల తోటలు (10,600 అడుగులు).</p></div></div></div><div class="ca26-group show" id="ca26-oct" data-m="oct"><div class="ca26-gtitle" style="color:#C62828">🏆 అక్టోబర్ 2026 (30వ తేదీ వరకు)</div><div class="ca26-grid"><div class="ca26-card" style="border-left-color:#C62828"><h4><span class="ca26-n" style="background:#C62828">1</span>నోబెల్ శాంతి బహుమతి 2026</h4><p>నవీ పిళ్లై (దక్షిణాఫ్రికా న్యాయవాది, మాజీ న్యాయమూర్తి) — ‘శాంతి, అంతర్జాతీయ చట్టం’ కోసం కృషికి. నోబెల్ శాంతి బహుమతి గెలిచిన తొలి దక్షిణాఫ్రికా మహిళ. ప్రకటన: 9 అక్టోబర్, ఓస్లో.</p></div><div class="ca26-card" style="border-left-color:#C62828"><h4><span class="ca26-n" style="background:#C62828">2</span>నోబెల్ వైద్యశాస్త్రం</h4><p>కార్ల్ డైసెరోత్, పీటర్ హెగెమాన్, జార్జ్ నాగెల్ — కాంతి-ఆధారిత అయాన్ ఛానెళ్లు, ఆప్టోజెనెటిక్స్.</p></div><div class="ca26-card" style="border-left-color:#C62828"><h4><span class="ca26-n" style="background:#C62828">3</span>నోబెల్ భౌతిక శాస్త్రం</h4><p>ఫ్రాన్సిస్ హాల్జెన్ — IceCube అబ్జర్వేటరీ, ఖగోళ మూలాల అధిక శక్తి న్యూట్రినోల ఆవిష్కరణ.</p></div><div class="ca26-card" style="border-left-color:#C62828"><h4><span class="ca26-n" style="background:#C62828">4</span>నోబెల్ రసాయన శాస్త్రం</h4><p>హెన్రీ కాగన్ (ఫ్రాన్స్), కెన్సో సోయి (జపాన్) — అసమమిత సేంద్రీయ సంశ్లేషణలో నాన్-లీనియర్ ప్రభావాలు, ఆటోకెటాలిసిస్ (‘మిర్రర్ ఇమేజ్’ అణువులు). బహుమతి మొత్తం ప్రతి విభాగానికి 12 మిలియన్ SEK.</p></div><div class="ca26-card" style="border-left-color:#C62828"><h4><span class="ca26-n" style="background:#C62828">5</span>భారత్ — తొలి ఫ్రీ-స్పేస్ క్వాంటం కీ డిస్ట్రిబ్యూషన్</h4><p>5.56 కి.మీ. ఫ్రీ-స్పేస్ QKD లింక్ ప్రదర్శన.</p></div><div class="ca26-card" style="border-left-color:#C62828"><h4><span class="ca26-n" style="background:#C62828">6</span>12వ BRICS పార్లమెంటరీ ఫోరం</h4><p>న్యూఢిల్లీ, 26–27 అక్టోబర్; ‘న్యూఢిల్లీ జాయింట్ డిక్లరేషన్’.</p></div><div class="ca26-card" style="border-left-color:#C62828"><h4><span class="ca26-n" style="background:#C62828">7</span>రక్షణ కొనుగోళ్లు — DAC</h4><p>సుమారు ₹2.12 లక్షల కోట్ల విలువైన ప్రతిపాదనలకు ఆమోదం (నివేదికల ప్రకారం).</p></div><div class="ca26-card" style="border-left-color:#C62828"><h4><span class="ca26-n" style="background:#C62828">8</span>పర్యావరణం &amp; సైన్స్</h4><p>WMO: 2025లో వాతావరణ CO₂ సాంద్రత రికార్డు 426.8 ppm. ESTIC 2026 — భారత్ మండపం, న్యూఢిల్లీ.</p></div><div class="ca26-card" style="border-left-color:#C62828"><h4><span class="ca26-n" style="background:#C62828">9</span>సైక్లోన్ ‘అర్నబ్’</h4><p>28 అక్టోబర్ రాత్రి ఆంధ్ర తీరం (నరసాపురం సమీపం) దాటి బలహీనపడింది; ముగ్గురు మృతి (నివేదికలు). IMD రెడ్ అలర్ట్, తీర ప్రాంతాల్లో తరలింపులు. ప్రాథమిక నష్టం అంచనా సుమారు ₹4,600 కోట్లు (AP ప్రభుత్వం).</p></div><div class="ca26-card" style="border-left-color:#C62828"><h4><span class="ca26-n" style="background:#C62828">10</span>మంత్రివర్గ ఆమోదాలు (30 అక్టోబర్)</h4><p>PM వికసిత్ గ్రామ్ స్వరాజ్ యోజన (₹7,395.55 కోట్లు; 2026–31), ఖేలో ఇండియా క్రీడా సామగ్రి తయారీ పథకం (₹1,856.67 కోట్లు), కంటైనర్ తయారీ ప్రోత్సాహక పథకం (₹10,000 కోట్లు).</p></div></div></div>
+
+  <div class="ca26-quiz" id="ca26-quiz">
+    <h3>📝 2026 కరెంట్ అఫైర్స్ — ప్రాక్టీస్ MCQs (15)</h3>
+    <div id="ca26-qs"></div>
+    <p class="ca26-score" id="ca26-score" aria-live="polite"></p>
+    <button class="ca26-reset" onclick="ca26Reset()">🔄 మళ్లీ ప్రయత్నించండి</button>
   </div>
 
+  <p class="ca26-note">గమనిక: ఈ నోట్స్ ప్రముఖ కరెంట్ అఫైర్స్ నెలవారీ సంకలనాలు (<a href="https://finologylegal.in/blog/recent-updates/september-current-affairs-2026" target="_blank" rel="noopener noreferrer">Finology Legal</a>, <a href="https://kpiasacademy.com/tag/appsc-daily-current-affairs/" target="_blank" rel="noopener noreferrer">KPIAS APPSC</a>), <a href="https://www.nobelprize.org/prizes/peace/2026/prize-announcement/" target="_blank" rel="noopener noreferrer">NobelPrize.org</a> ఆధారంగా సిద్ధం చేసినవి. పరీక్షకు ముందు PIB, APPSC అధికారిక వెబ్‌సైట్లలో తేదీలు, పేర్లు, గణాంకాలను సరిచూసుకోండి. నోబెల్ సాహిత్యం, ఆర్థిక శాస్త్రం విజేతలను అధికారిక సైట్‌లో చూడండి.</p>
+</div>
+<script>
+(function(){
+  var QUIZ = [["77వ గణతంత్ర దినోత్సవ (2026) థీమ్ ఏది?", ["Viksit Bharat 2047", "వందే మాతరం 150 సంవత్సరాలు", "Digital India", "Atmanirbhar Bharat"], 1], ["2026 జనవరిలో యూరోజోన్ 21వ సభ్యదేశంగా చేరిన దేశం?", ["రొమేనియా", "క్రొయేషియా", "బల్గేరియా", "పోలాండ్"], 2], ["India AI Impact Summit 2026 ఎక్కడ జరిగింది?", ["భారత్ మండపం, న్యూఢిల్లీ", "హైటెక్ సిటీ, హైదరాబాద్", "అమరావతి", "బెంగళూరు"], 0], ["ICC పురుషుల T20 ప్రపంచ కప్ 2026లో ‘ప్లేయర్ ఆఫ్ ది సిరీస్’?", ["విరాట్ కోహ్లీ", "రషీద్ ఖాన్", "జస్ప్రీత్ బుమ్రా", "సంజూ శాంసన్"], 3], ["ఉత్తరాఖండ్ తర్వాత UCC అమలు చేసిన రెండో రాష్ట్రం?", ["గుజరాత్", "అస్సాం", "మహారాష్ట్ర", "గోవా"], 0], ["AP పునర్వ్యవస్థీకరణ (సవరణ) చట్టం 2026లో 2014 చట్టంలోని ఏ సెక్షన్‌ను సవరించారు?", ["సెక్షన్ 8", "సెక్షన్ 94", "సెక్షన్ 5", "సెక్షన్ 3"], 2], ["సౌత్ కోస్ట్ రైల్వే జోన్ ప్రధాన కార్యాలయం?", ["గుంటూరు", "విశాఖపట్నం", "విజయవాడ", "తిరుపతి"], 1], ["జనాభా లెక్కలు 2027 మస్కట్లు ఏవి?", ["చిన్ను–మిన్ను", "భీమ్–అర్జున్", "శక్తి–గతి", "ప్రగతి–వికాస్"], 3], ["FIFA ప్రపంచ కప్ 2026 విజేత?", ["స్పెయిన్", "అర్జెంటీనా", "ఫ్రాన్స్", "బ్రెజిల్"], 0], ["కర్ణాటక రెండో అధికార భాష హోదా ఇచ్చిన భాష?", ["కొంకణి", "కొడవ", "తులు", "ఉర్దూ"], 2], ["కామన్వెల్త్ క్రీడలు 2026లో భారత్ స్థానం?", ["2వ", "4వ", "3వ", "6వ"], 1], ["ఆసియా క్రీడలు 2026 (20వ) ఆతిథ్య నగరాలు?", ["హాంగ్‌జౌ", "జకార్తా", "ఇంచియాన్", "ఐచి–నగోయా"], 3], ["నోబెల్ శాంతి బహుమతి 2026 గ్రహీత?", ["నవీ పిళ్లై", "మరియా రెస్సా", "గ్రాసా మాచెల్", "మలాలా యూసఫ్‌జాయ్"], 0], ["నోబెల్ భౌతిక శాస్త్రం 2026 — IceCube అబ్జర్వేటరీ ఆవిష్కరణలకు గ్రహీత?", ["కెన్సో సోయి", "కార్ల్ డైసెరోత్", "ఫ్రాన్సిస్ హాల్జెన్", "హెన్రీ కాగన్"], 2], ["పూల సుబ్బయ్య వెలిగొండ ప్రాజెక్టు ఫేజ్-I ప్రారంభమైన తేదీ?", ["5 మార్చి 2026", "31 ఆగస్టు 2026", "15 ఆగస్టు 2026", "2 అక్టోబర్ 2026"], 1]];
+  var done = 0, score = 0;
+  window.ca26Show = function(m){
+    document.querySelectorAll('#ca-2026 .ca26-tab').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-m')===m); });
+    document.querySelectorAll('#ca-2026 .ca26-group').forEach(function(g){
+      g.classList.toggle('show', m==='all' || g.getAttribute('data-m')===m);
+    });
+  };
+  function render(){
+    done = 0; score = 0;
+    var box = document.getElementById('ca26-qs'); if(!box) return;
+    box.innerHTML = '';
+    QUIZ.forEach(function(q, qi){
+      var wrap = document.createElement('div'); wrap.className = 'ca26-q';
+      var p = document.createElement('p'); p.textContent = (qi+1) + '. ' + q[0]; wrap.appendChild(p);
+      var btns = [];
+      q[1].forEach(function(o, oi){
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'ca26-opt';
+        b.textContent = String.fromCharCode(65+oi) + '. ' + o;
+        b.onclick = function(){
+          btns.forEach(function(x){ x.disabled = true; });
+          if(oi === q[2]){ b.classList.add('ok'); score++; }
+          else { b.classList.add('no'); btns[q[2]].classList.add('ok'); }
+          done++; upd();
+        };
+        btns.push(b); wrap.appendChild(b);
+      });
+      box.appendChild(wrap);
+    });
+    upd();
+  }
+  function upd(){
+    var s = document.getElementById('ca26-score');
+    if(s) s.textContent = 'మీ స్కోరు: ' + score + ' / ' + done + ' (మొత్తం ' + QUIZ.length + ' ప్రశ్నలు)';
+  }
+  window.ca26Reset = render;
+  render();
+})();
+</script>
   <div class="about-card" style="margin-top:20px;border-left-color:#003F87;">
     <h3>📝 APPSC Group-2 — Practice MCQs</h3>
     <div class="sm-q" data-answer="b">
