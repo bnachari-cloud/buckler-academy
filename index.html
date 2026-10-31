@@ -1093,7 +1093,7 @@ footer{background:#17243a!important;color:#d9e1ed!important}
     <div class="res-card"><div class="res-card-icon">📄</div><div class="res-card-title">Full Study Material (PDF)</div>
       <div class="res-card-desc">Syllabus, short notes, 16 chapters of AP History with MCQs, formulas, practice test and 6-month plan.</div>
       <div class="res-card-actions"><a class="res-btn green" href="#" onclick="smPdf(event,false)">📖 Open</a><a class="res-btn gold" href="#" onclick="smPdf(event,true)">⬇ Download</a></div></div>
-    <div class="res-card"><div class="res-card-icon">📋</div><div class="res-card-title">Official Syllabus &amp; Notifications</div>
+    <div class="res-card" id="appsc-notifications"><div class="res-card-icon">📋</div><div class="res-card-title">Official Syllabus &amp; Notifications</div>
       <div class="res-card-desc">Always compare the notes with the latest APPSC Group-II notification, syllabus and previous papers.</div>
       <div class="res-card-actions"><a class="res-btn blue" href="https://psc.ap.gov.in" target="_blank" rel="noopener">🌐 APPSC Website</a></div></div>
     <div class="res-card"><div class="res-card-icon">📝</div><div class="res-card-title">Practice Quiz</div>
@@ -1595,9 +1595,15 @@ function sendSuggestion(text) {
 document.querySelectorAll('.nav a:not(.dept-dropdown-item)').forEach(link=>{
   if(link.closest('.nav-dropdown') && link===link.closest('.nav-dropdown').querySelector('a')) return;
   link.addEventListener('click',e=>{
+    const href=link.getAttribute('href')||'';
+    // Only handle in-page "#section" links here. Links to other pages
+    // (mock-test.html, menu.html) must be left alone so the browser can open them.
+    if(href.charAt(0)!=='#' || href.length<2) return;
+    const target=document.getElementById(href.slice(1));
+    if(!target) return;
     e.preventDefault();
-    const id=link.getAttribute('href').slice(1);
-    document.getElementById(id)?.scrollIntoView({behavior:'smooth'});
+    if(target.tagName==='DETAILS') target.open=true;
+    target.scrollIntoView({behavior:'smooth'});
   });
 });
 
@@ -1976,186 +1982,24 @@ document.addEventListener('click', function(e){
 });
 </script>
 
-
-
-
-<style id="buckler-mock-test-styles">
-#online-mock-tests{padding:64px 5%;background:#f5f8fc;color:#17243a}
-#online-mock-tests .mock-wrap{max-width:1120px;margin:auto}
-#online-mock-tests .mock-heading{text-align:center;margin-bottom:28px}
-#online-mock-tests .mock-heading .eyebrow{color:#2463a6;font-weight:800;letter-spacing:2px;font-size:12px}
-#online-mock-tests .mock-heading h2{font-size:clamp(25px,4vw,36px);margin:9px 0;color:#142b49}
-#online-mock-tests .mock-heading p{color:#5e6d80;margin:0}
-#online-mock-tests .mock-panel{background:#fff;border:1px solid #e1e8f0;border-radius:18px;padding:clamp(16px,3vw,28px);box-shadow:0 12px 35px rgba(22,48,80,.07)}
-#online-mock-tests .mock-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px;margin:22px 0}
-#online-mock-tests .mock-field label{display:block;font-size:13px;font-weight:700;margin-bottom:7px}
-#online-mock-tests .mock-field select,#online-mock-tests .mock-field input{width:100%;padding:12px;border:1px solid #cbd6e2;border-radius:10px;background:white;color:#17243a;font:inherit}
-#online-mock-tests .mock-btn{border:0;border-radius:10px;padding:12px 20px;background:#155da8;color:white;font-weight:800;cursor:pointer;font:inherit}
-#online-mock-tests .mock-btn:hover{filter:brightness(.94)}
-#online-mock-tests .mock-btn.secondary{background:#e8f0fa;color:#174d82}
-#online-mock-tests .mock-muted{color:#68788c;font-size:13px;line-height:1.6}
-#online-mock-tests .mock-test-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
-#online-mock-tests .mock-timer{font-size:20px;font-weight:900;color:#b42318;background:#fff0ee;padding:9px 14px;border-radius:10px;font-variant-numeric:tabular-nums}
-#online-mock-tests .mock-progress{height:8px;background:#e8eef5;border-radius:20px;overflow:hidden;margin:12px 0 20px}
-#online-mock-tests .mock-progress span{display:block;height:100%;background:#1b75bd;width:0;transition:width .2s}
-#online-mock-tests .mock-q{font-size:19px;font-weight:800;line-height:1.55;margin:8px 0 18px}
-#online-mock-tests .mock-q .te{display:block;font-size:17px;color:#42566e;margin-top:5px;font-weight:600}
-#online-mock-tests .mock-options{display:grid;gap:10px}
-#online-mock-tests .mock-option{display:flex;gap:10px;align-items:flex-start;padding:13px;border:1px solid #d9e2ec;border-radius:11px;cursor:pointer;line-height:1.5}
-#online-mock-tests .mock-option:hover{background:#f3f8fd;border-color:#75a9d8}
-#online-mock-tests .mock-option input{margin-top:5px;accent-color:#155da8}
-#online-mock-tests .mock-controls{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:22px}
-#online-mock-tests .mock-palette{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
-#online-mock-tests .mock-palette button{width:38px;height:38px;border:1px solid #ccd7e3;border-radius:9px;background:#fff;color:#30445c;cursor:pointer}
-#online-mock-tests .mock-palette button.answered{background:#dff5e8;border-color:#66b887}
-#online-mock-tests .mock-palette button.current{outline:3px solid #9cc7ef}
-#online-mock-tests .mock-result-score{font-size:42px;font-weight:900;color:#155da8;text-align:center;margin:10px}
-#online-mock-tests .mock-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:20px 0}
-#online-mock-tests .mock-stat{background:#f1f6fb;border-radius:12px;padding:14px;text-align:center}
-#online-mock-tests .mock-stat strong{display:block;font-size:24px;color:#174d82}
-#online-mock-tests .mock-review{border-top:1px solid #e4eaf1;padding:15px 0}
-#online-mock-tests .mock-correct{color:#147a43;font-weight:800}
-#online-mock-tests .mock-wrong{color:#b42318;font-weight:800}
-@media(max-width:600px){#online-mock-tests{padding:42px 4%}#online-mock-tests .mock-q{font-size:17px}}
-</style>
-
-<section id="online-mock-tests">
- <div class="mock-wrap">
-  <div class="mock-heading">
-   <div class="eyebrow">BUCKLER ACADEMY • APPSC GROUP-2</div>
-   <h2>Online Mock Tests | ఆన్‌లైన్ మాక్ టెస్టులు</h2>
-   <p>Practice • Manage Time • Check Your Result<br>ప్రాక్టీస్ చేయండి • సమయాన్ని నిర్వహించండి • ఫలితాన్ని తెలుసుకోండి</p>
-  </div>
-  <div class="mock-panel" id="mock-start-panel">
-   <h3>📝 Start Your Test | పరీక్ష ప్రారంభించండి</h3>
-   <div class="mock-grid">
-    <div class="mock-field"><label for="mock-subject">Select Subject | సబ్జెక్ట్ ఎంచుకోండి</label>
-     <select id="mock-subject"><option value="general">General Studies – Demo Test / జనరల్ స్టడీస్</option></select>
-    </div>
-    <div class="mock-field"><label for="mock-duration">Duration | సమయం</label>
-     <select id="mock-duration"><option value="15">15 Minutes</option><option value="30">30 Minutes</option><option value="60">60 Minutes</option></select>
-    </div>
-    <div class="mock-field"><label for="mock-name">Your Name | మీ పేరు (Optional)</label>
-     <input id="mock-name" type="text" maxlength="60" placeholder="Enter your name / మీ పేరు"/>
-    </div>
-   </div>
-   <p class="mock-muted">ఈ డెమో పరీక్షలో 10 ప్రశ్నలు ఉన్నాయి. ప్రతి సరైన సమాధానానికి 1 మార్కు. తప్పు సమాధానానికి నెగటివ్ మార్కు లేదు. Actual APPSC exam marking scheme may differ; update it according to the relevant notification.</p>
-   <button class="mock-btn" id="mock-start-btn" type="button">Start Test / పరీక్ష ప్రారంభించండి →</button>
-  </div>
-
-  <div class="mock-panel" id="mock-test-panel" hidden>
-   <div class="mock-test-top">
-    <div><strong id="mock-test-title">General Studies Demo Test</strong><div class="mock-muted" id="mock-candidate"></div></div>
-    <div class="mock-timer" id="mock-timer" aria-live="polite">15:00</div>
-   </div>
-   <div class="mock-progress"><span id="mock-progress-bar"></span></div>
-   <div class="mock-muted" id="mock-question-count"></div>
-   <div class="mock-q" id="mock-question"></div>
-   <div class="mock-options" id="mock-options"></div>
-   <div class="mock-controls">
-    <button class="mock-btn secondary" id="mock-prev" type="button">← Previous</button>
-    <button class="mock-btn secondary" id="mock-next" type="button">Next →</button>
-    <button class="mock-btn" id="mock-submit" type="button">Submit Test / సమర్పించండి</button>
-   </div>
-   <div class="mock-muted" style="margin-top:16px">Question Navigator | ప్రశ్నల సూచిక</div>
-   <div class="mock-palette" id="mock-palette"></div>
-  </div>
-
-  <div class="mock-panel" id="mock-result-panel" hidden>
-   <h3 style="text-align:center">Test Result | పరీక్ష ఫలితం</h3>
-   <div class="mock-result-score" id="mock-score">0/10</div>
-   <p style="text-align:center" id="mock-result-message"></p>
-   <div class="mock-stats">
-    <div class="mock-stat"><strong id="mock-correct-count">0</strong><span>Correct / సరైనవి</span></div>
-    <div class="mock-stat"><strong id="mock-wrong-count">0</strong><span>Wrong / తప్పు</span></div>
-    <div class="mock-stat"><strong id="mock-unanswered-count">0</strong><span>Unanswered / సమాధానం ఇవ్వనివి</span></div>
-    <div class="mock-stat"><strong id="mock-percent">0%</strong><span>Percentage / శాతం</span></div>
-   </div>
-   <button class="mock-btn" id="mock-retry" type="button">Try Again / మళ్లీ ప్రయత్నించండి</button>
-   <h3 style="margin-top:28px">Answer Review | సమాధానాల వివరణ</h3>
-   <div id="mock-review"></div>
-  </div>
- </div>
-</section>
-
-<script id="buckler-mock-test-script">
+<script id="buckler-open-details-on-anchor">
 (function(){
- 'use strict';
- const questions = [
-  {en:"Who is known as the chief architect of the Indian Constitution?",te:"భారత రాజ్యాంగ ప్రధాన రూపశిల్పిగా ఎవరిని పిలుస్తారు?",opts:["Mahatma Gandhi / మహాత్మా గాంధీ","Dr. B. R. Ambedkar / డా. బి.ఆర్. అంబేద్కర్","Jawaharlal Nehru / జవహర్‌లాల్ నెహ్రూ","Sardar Patel / సర్దార్ పటేల్"],a:1,why:"Dr. B. R. Ambedkar chaired the Drafting Committee of the Constituent Assembly. / రాజ్యాంగ ముసాయిదా కమిటీకి డా. బి.ఆర్. అంబేద్కర్ అధ్యక్షత వహించారు."},
-  {en:"Which Article deals with equality before law?",te:"చట్టం ముందు సమానత్వానికి సంబంధించిన అధికరణ ఏది?",opts:["Article 14 / అధికరణ 14","Article 19 / అధికరణ 19","Article 21 / అధికరణ 21","Article 32 / అధికరణ 32"],a:0,why:"Article 14 guarantees equality before law and equal protection of laws. / అధికరణ 14 చట్టం ముందు సమానత్వాన్ని కల్పిస్తుంది."},
-  {en:"The river Godavari originates in which state?",te:"గోదావరి నది ఏ రాష్ట్రంలో జన్మిస్తుంది?",opts:["Andhra Pradesh / ఆంధ్రప్రదేశ్","Maharashtra / మహారాష్ట్ర","Telangana / తెలంగాణ","Karnataka / కర్ణాటక"],a:1,why:"The Godavari originates near Trimbakeshwar in Maharashtra. / గోదావరి నది మహారాష్ట్రలోని త్రయంబకేశ్వర్ సమీపంలో జన్మిస్తుంది."},
-  {en:"Who founded the Mauryan Empire?",te:"మౌర్య సామ్రాజ్య స్థాపకుడు ఎవరు?",opts:["Ashoka / అశోకుడు","Bindusara / బిందుసారుడు","Chandragupta Maurya / చంద్రగుప్త మౌర్యుడు","Harsha / హర్షుడు"],a:2,why:"Chandragupta Maurya founded the Mauryan Empire with the guidance of Chanakya. / చాణక్యుని మార్గదర్శకత్వంలో చంద్రగుప్త మౌర్యుడు మౌర్య సామ్రాజ్యాన్ని స్థాపించాడు."},
-  {en:"What is the minimum age to become a member of the Lok Sabha?",te:"లోక్‌సభ సభ్యుడిగా ఎన్నిక కావడానికి కనీస వయస్సు ఎంత?",opts:["18 years / 18 సంవత్సరాలు","21 years / 21 సంవత్సరాలు","25 years / 25 సంవత్సరాలు","30 years / 30 సంవత్సరాలు"],a:2,why:"The minimum age for Lok Sabha membership is 25 years. / లోక్‌సభ సభ్యత్వానికి కనీస వయస్సు 25 సంవత్సరాలు."},
-  {en:"Which institution issues currency notes in India, except the one-rupee note?",te:"భారతదేశంలో ఒక రూపాయి నోటు మినహా ఇతర కరెన్సీ నోట్లను జారీ చేసే సంస్థ ఏది?",opts:["SBI / ఎస్‌బీఐ","RBI / ఆర్‌బీఐ","SEBI / సెబీ","NABARD / నాబార్డ్"],a:1,why:"The Reserve Bank of India issues banknotes; the one-rupee note is issued by the Government of India. / ఆర్‌బీఐ బ్యాంకు నోట్లను జారీ చేస్తుంది; ఒక రూపాయి నోటును భారత ప్రభుత్వం జారీ చేస్తుంది."},
-  {en:"Which gas is most abundant in Earth's atmosphere?",te:"భూమి వాతావరణంలో అత్యధికంగా ఉండే వాయువు ఏది?",opts:["Oxygen / ఆక్సిజన్","Carbon dioxide / కార్బన్ డైఆక్సైడ్","Nitrogen / నైట్రోజన్","Hydrogen / హైడ్రోజన్"],a:2,why:"Nitrogen makes up about 78% of Earth's atmosphere. / భూమి వాతావరణంలో సుమారు 78 శాతం నైట్రోజన్ ఉంటుంది."},
-  {en:"Where is the headquarters of the ISRO located?",te:"ఇస్రో ప్రధాన కార్యాలయం ఎక్కడ ఉంది?",opts:["Hyderabad / హైదరాబాద్","Bengaluru / బెంగళూరు","New Delhi / న్యూఢిల్లీ","Chennai / చెన్నై"],a:1,why:"ISRO headquarters is in Bengaluru, Karnataka. / ఇస్రో ప్రధాన కార్యాలయం కర్ణాటకలోని బెంగళూరులో ఉంది."},
-  {en:"Which is the largest planet in the Solar System?",te:"సౌర కుటుంబంలో అతిపెద్ద గ్రహం ఏది?",opts:["Earth / భూమి","Saturn / శని","Jupiter / గురుడు","Mars / అంగారకుడు"],a:2,why:"Jupiter is the largest planet in the Solar System. / సౌర కుటుంబంలో గురుడు అతిపెద్ద గ్రహం."},
-  {en:"The 73rd Constitutional Amendment is related to which institutions?",te:"73వ రాజ్యాంగ సవరణ ఏ సంస్థలకు సంబంధించినది?",opts:["Municipalities / మున్సిపాలిటీలు","Panchayati Raj Institutions / పంచాయతీరాజ్ సంస్థలు","Supreme Court / సుప్రీంకోర్టు","Parliament / పార్లమెంట్"],a:1,why:"The 73rd Amendment gave constitutional status to Panchayati Raj Institutions. / 73వ సవరణ పంచాయతీరాజ్ సంస్థలకు రాజ్యాంగ హోదా కల్పించింది."}
- ];
- const $ = id => document.getElementById(id);
- let answers=[], index=0, remaining=900, timer=null, finished=false;
- const startPanel=$('mock-start-panel'), testPanel=$('mock-test-panel'), resultPanel=$('mock-result-panel');
- function render(){
-  const q=questions[index];
-  $('mock-question-count').textContent=`Question ${index+1} of ${questions.length} | ప్రశ్న ${index+1} / ${questions.length}`;
-  $('mock-progress-bar').style.width=((index+1)/questions.length*100)+'%';
-  $('mock-question').innerHTML=`<span>${q.en}</span><span class="te">${q.te}</span>`;
-  $('mock-options').innerHTML='';
-  q.opts.forEach((opt,i)=>{
-   const label=document.createElement('label');label.className='mock-option';
-   const radio=document.createElement('input');radio.type='radio';radio.name='mock-answer';radio.value=i;radio.checked=answers[index]===i;
-   radio.addEventListener('change',()=>{answers[index]=i;renderPalette();});
-   const span=document.createElement('span');span.textContent=String.fromCharCode(65+i)+'. '+opt;
-   label.append(radio,span);$('mock-options').append(label);
+  function openIfDetails(id){
+    if(!id) return;
+    var el=document.getElementById(id);
+    if(el && el.tagName==='DETAILS'){ el.open=true; }
+    return el;
+  }
+  function fromHash(){
+    var el=openIfDetails(location.hash.slice(1));
+    if(el){ setTimeout(function(){ el.scrollIntoView({behavior:'smooth'}); },150); }
+  }
+  window.addEventListener('load',fromHash);
+  window.addEventListener('hashchange',fromHash);
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="#"]');
+    if(a && a.getAttribute('href').length>1) openIfDetails(a.getAttribute('href').slice(1));
   });
-  $('mock-prev').disabled=index===0;
-  $('mock-next').disabled=index===questions.length-1;
-  renderPalette();
- }
- function renderPalette(){
-  const p=$('mock-palette');p.innerHTML='';
-  questions.forEach((q,i)=>{const b=document.createElement('button');b.type='button';b.textContent=i+1;b.className=(answers[i]!==undefined?'answered ':'')+(i===index?'current':'');b.setAttribute('aria-label','Question '+(i+1));b.addEventListener('click',()=>{index=i;render();});p.append(b);});
- }
- function showTime(){const m=Math.floor(remaining/60),s=remaining%60;$('mock-timer').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');}
- function start(){
-  answers=Array(questions.length).fill(undefined);index=0;finished=false;
-  remaining=Number($('mock-duration').value)*60;
-  $('mock-candidate').textContent=$('mock-name').value.trim()?'Candidate: '+$('mock-name').value.trim():'APPSC Group-2 Practice';
-  startPanel.hidden=true;resultPanel.hidden=true;testPanel.hidden=false;
-  render();showTime();
-  clearInterval(timer);timer=setInterval(()=>{remaining--;showTime();if(remaining<=0)submit(true);},1000);
-  testPanel.scrollIntoView({behavior:'smooth',block:'start'});
- }
- function submit(auto){
-  if(finished)return;
-  const unanswered=answers.filter(v=>v===undefined).length;
-  if(!auto&&!confirm('Submit your test now? / పరీక్షను సమర్పించాలా?'))return;
-  finished=true;clearInterval(timer);testPanel.hidden=true;resultPanel.hidden=false;
-  let correct=0;answers.forEach((v,i)=>{if(v===questions[i].a)correct++;});
-  const wrong=questions.length-correct-unanswered,percent=Math.round(correct/questions.length*100);
-  $('mock-score').textContent=correct+' / '+questions.length;
-  $('mock-result-message').textContent=(auto?'Time is over. / సమయం ముగిసింది. ':'')+(percent>=70?'Good effort! Keep revising. / మంచి ప్రయత్నం! పునశ్చరణ కొనసాగించండి.':'Review the explanations and try again. / వివరణలు చదివి మళ్లీ ప్రయత్నించండి.');
-  $('mock-correct-count').textContent=correct;$('mock-wrong-count').textContent=wrong;$('mock-unanswered-count').textContent=unanswered;$('mock-percent').textContent=percent+'%';
-  const review=$('mock-review');review.innerHTML='';
-  questions.forEach((q,i)=>{
-   const item=document.createElement('div');item.className='mock-review';
-   const status=answers[i]===q.a?'Correct / సరైన సమాధానం':(answers[i]===undefined?'Not answered / సమాధానం ఇవ్వలేదు':'Incorrect / తప్పు సమాధానం');
-   const st=document.createElement('div');st.className=answers[i]===q.a?'mock-correct':'mock-wrong';st.textContent=(i+1)+'. '+status;
-   const question=document.createElement('p');question.textContent=q.en+' | '+q.te;
-   const chosen=document.createElement('p');chosen.textContent='Your answer: '+(answers[i]===undefined?'—':q.opts[answers[i]]);
-   const answer=document.createElement('p');answer.textContent='Correct answer: '+q.opts[q.a];
-   const why=document.createElement('p');why.className='mock-muted';why.textContent='Explanation: '+q.why;
-   item.append(st,question,chosen,answer,why);review.append(item);
-  });
-  resultPanel.scrollIntoView({behavior:'smooth',block:'start'});
- }
- $('mock-start-btn').addEventListener('click',start);
- $('mock-prev').addEventListener('click',()=>{if(index>0){index--;render();}});
- $('mock-next').addEventListener('click',()=>{if(index<questions.length-1){index++;render();}});
- $('mock-submit').addEventListener('click',()=>submit(false));
- $('mock-retry').addEventListener('click',()=>{resultPanel.hidden=true;startPanel.hidden=false;startPanel.scrollIntoView({behavior:'smooth'});});
 })();
 </script>
-
 </body></html>
