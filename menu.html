@@ -32,6 +32,58 @@ footer{text-align:center;color:#718096;font-size:12px;padding:20px;border-top:1p
 .note{text-align:center;color:#758197;font-size:12px;margin-top:18px}
 @media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:540px){header{padding:27px 16px}.grid{grid-template-columns:1fr}main{padding:24px 15px 38px}.card{min-height:unset}}
+
+.panels{margin-top:30px}
+.panel{display:none;background:#fff;border:1px solid #dbe4ef;border-radius:16px;padding:24px;box-shadow:0 8px 26px #17385d12;scroll-margin-top:16px}
+.panel.open{display:block}
+.panel-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;margin-bottom:16px;flex-wrap:wrap}
+.panel-head h2{margin:0;font-size:21px;color:var(--navy)}.panel-head p{margin:5px 0 0;color:var(--muted);font-size:13px;line-height:1.6}
+.close{border:1px solid #cdd8e6;background:#fff;color:var(--navy);border-radius:9px;padding:8px 14px;font:inherit;font-size:12.5px;font-weight:700;cursor:pointer}
+.close:hover{background:#edf4fc}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #f2bd42;outline-offset:2px}
+.card.active{border-color:var(--green);box-shadow:0 0 0 2px #17633a33}
+.btn{border:0;background:var(--navy);color:#fff;border-radius:9px;padding:10px 16px;font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+.btn.alt{background:#fff;color:var(--navy);border:1px solid #cdd8e6}
+.btn.danger{background:#fff;color:#b4232c;border:1px solid #e3b3b6}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px}
+/* quiz */
+.qbox{border:1px solid #e1e8f1;border-radius:12px;padding:15px 16px;margin-bottom:12px}
+.qbox p{margin:0 0 10px;font-weight:600;line-height:1.7;font-size:14.5px}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:13.5px;border:1px solid #d6deea;background:#fff;border-radius:9px;padding:9px 12px;margin-bottom:6px;cursor:pointer;color:var(--ink)}
+.opt:hover:not(:disabled){background:#f0f6fd;border-color:#7fa6d0}
+.opt.ok{background:#237647;border-color:#237647;color:#fff}.opt.no{background:#b4232c;border-color:#b4232c;color:#fff}
+.why{display:none;margin-top:6px;font-size:12.5px;line-height:1.6;color:#41536b;background:#f4f8fc;border-radius:8px;padding:8px 10px}
+.score{font-weight:800;color:var(--navy);margin-top:6px}
+/* gk */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tab{font:inherit;font-size:12.5px;font-weight:700;border:1px solid #cdd8e6;background:#fff;color:#47536a;border-radius:20px;padding:8px 14px;cursor:pointer}
+.tab.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.gkgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.gk{border:1px solid #e1e8f1;border-left:4px solid var(--blue);border-radius:11px;padding:12px 14px}
+.gk h4{margin:0 0 5px;font-size:14px;color:var(--navy)}.gk p{margin:0;font-size:13px;line-height:1.75;color:#43536a}
+/* planner */
+.form{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.form label{font-size:12.5px;font-weight:700;color:var(--navy);display:grid;gap:5px}
+.form input,.form select{font:inherit;font-size:14px;padding:9px 10px;border:1px solid #cdd8e6;border-radius:9px;background:#fff}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0 16px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid #e6edf5}th{background:#f1f6fc;color:var(--navy)}
+.tw{overflow-x:auto}
+.phase{font-weight:800;color:var(--green);margin:16px 0 2px;font-size:15px}
+.check{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:8px}
+.check fieldset{border:1px solid #e1e8f1;border-radius:11px;padding:10px 14px;margin:0}
+.check legend{font-weight:700;color:var(--navy);font-size:13px;padding:0 6px}
+.check label{display:flex;gap:8px;align-items:flex-start;font-size:13px;line-height:1.6;padding:3px 0}
+.bar{height:12px;background:#e8eef6;border-radius:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--green)}
+/* progress */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:18px}
+.stat{border:1px solid #e1e8f1;border-radius:12px;padding:13px 14px}
+.stat b{display:block;font-size:26px;color:var(--navy)}.stat span{font-size:12px;color:var(--muted)}
+.hist{display:flex;gap:8px;align-items:flex-end;height:140px;border-bottom:1px solid #cdd8e6;padding:0 4px;overflow-x:auto}
+.hist div{flex:0 0 34px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;font-size:11px;color:var(--muted)}
+.hist i{display:block;width:100%;background:var(--blue);border-radius:6px 6px 0 0;min-height:3px}
+.empty{color:var(--muted);font-size:13.5px;line-height:1.7;padding:6px 0}
+@media(max-width:800px){.gkgrid,.check{grid-template-columns:1fr}.form{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
@@ -54,16 +106,253 @@ footer{text-align:center;color:#718096;font-size:12px;padding:20px;border-top:1p
     <a class="card" href="index.html#current-affairs"><span class="ico">📰</span><span><h3>Current Affairs</h3><p>Daily and monthly current affairs updates.</p><span class="arrow">Read Updates ↗</span></span></a>
     <a class="card" href="index.html#resources"><span class="ico">📄</span><span><h3>Previous Papers</h3><p>Find available examination papers in the study resources.</p><span class="arrow">View Resources ↗</span></span></a>
     <a class="card featured" href="mock-test.html"><span class="ico">⏱️</span><span><h3>Online Mock Tests</h3><p>Attempt timed tests, submit answers and review your result.</p><span class="arrow">Start Mock Test ↗</span></span></a>
-    <a class="card" href="index.html#sm-quiz"><span class="ico">🎯</span><span><h3>Daily Quiz / Practice MCQs</h3><p>Practise questions and check your understanding.</p><span class="arrow">Start Quiz ↗</span></span></a>
-    <a class="card" href="index.html#resources"><span class="ico">🌾</span><span><h3>AP Special GK</h3><p>Andhra Pradesh history notes, videos and study resources.</p><span class="arrow">Explore AP Topics ↗</span></span></a>
-    <a class="card" href="index.html#courses"><span class="ico">🗓️</span><span><h3>Study Planner</h3><p>Use the course and learning sections to plan your preparation.</p><span class="arrow">Plan Learning ↗</span></span></a>
-    <a class="card" href="mock-test.html"><span class="ico">📈</span><span><h3>My Progress</h3><p>Take a test and review your score and answers to track improvement.</p><span class="arrow">Check My Score ↗</span></span></a>
+    <a class="card" href="#daily-quiz" data-open="daily-quiz"><span class="ico">🎯</span><span><h3>Daily Quiz / Practice MCQs</h3><p>Five fresh questions every day, with answers explained.</p><span class="arrow">Open Quiz ↓</span></span></a>
+    <a class="card" href="#ap-gk" data-open="ap-gk"><span class="ico">🌾</span><span><h3>AP Special GK</h3><p>Andhra Pradesh history, geography, symbols and current topics.</p><span class="arrow">Open AP GK ↓</span></span></a>
+    <a class="card" href="#study-planner" data-open="study-planner"><span class="ico">🗓️</span><span><h3>Study Planner</h3><p>Build a week-by-week plan from your exam date and daily study hours.</p><span class="arrow">Open Planner ↓</span></span></a>
+    <a class="card" href="#my-progress" data-open="my-progress"><span class="ico">📈</span><span><h3>My Progress</h3><p>See your quiz scores, planner completion and learning streak in one place.</p><span class="arrow">View Progress ↓</span></span></a>
     <a class="card" href="index.html#appsc-notifications"><span class="ico">🔔</span><span><h3>Notifications</h3><p>Official APPSC Group-2 syllabus and notification links.</p><span class="arrow">View Notifications ↗</span></span></a>
     <div class="card soon" aria-disabled="true"><span class="ico">💬</span><span><h3>Contact / Doubts</h3><p>Reach the academy for questions and learning support.</p><span class="arrow">Coming soon</span></span></div>
   </section>
+
+  <div class="panels" id="panels">
+
+  <section class="panel" id="daily-quiz" aria-labelledby="dq-h">
+    <div class="panel-head"><div><h2 id="dq-h">🎯 Daily Quiz | నేటి క్విజ్</h2><p id="dq-date"></p></div><button class="close" data-close>Close ✕</button></div>
+    <div id="dq-qs"></div>
+    <p class="score" id="dq-score" aria-live="polite"></p>
+    <div class="row"><button class="btn" id="dq-more">మరో 5 ప్రశ్నలు</button><button class="btn alt" id="dq-retry">ఇదే సెట్ మళ్లీ ప్రయత్నించండి</button></div>
+  </section>
+
+  <section class="panel" id="ap-gk" aria-labelledby="gk-h">
+    <div class="panel-head"><div><h2 id="gk-h">🌾 AP Special GK | ఆంధ్రప్రదేశ్ ప్రత్యేకం</h2><p>APPSC Group-2 కోసం ఆంధ్రప్రదేశ్ ముఖ్యాంశాలు. తేదీలు, గణాంకాలను పరీక్షకు ముందు అధికారిక వనరులతో సరిచూసుకోండి.</p></div><button class="close" data-close>Close ✕</button></div>
+    <div class="tabs" id="gk-tabs" role="tablist"></div>
+    <div class="gkgrid" id="gk-body"></div>
+  </section>
+
+  <section class="panel" id="study-planner" aria-labelledby="sp-h">
+    <div class="panel-head"><div><h2 id="sp-h">🗓️ Study Planner | స్టడీ ప్లానర్</h2><p>పరీక్ష తేదీ, రోజుకు చదివే గంటలు ఇవ్వండి. వారం వారీ సబ్జెక్టు గంటల ప్లాన్ తయారవుతుంది. ఇది మార్గదర్శకం మాత్రమే.</p></div><button class="close" data-close>Close ✕</button></div>
+    <div class="form">
+      <label>Exam date (పరీక్ష తేదీ)<input type="date" id="sp-date"></label>
+      <label>Hours per day (రోజుకు గంటలు)<select id="sp-hrs"></select></label>
+      <label>Study days per week<select id="sp-days"><option>5</option><option>6</option><option selected>7</option></select></label>
+    </div>
+    <div class="row"><button class="btn" id="sp-make">Make my plan</button></div>
+    <div id="sp-out"></div>
+    <h3 style="color:var(--navy);margin:22px 0 4px;font-size:16px">Syllabus checklist</h3>
+    <div class="bar" aria-hidden="true"><i id="sp-bar" style="width:0"></i></div>
+    <p class="note" id="sp-pct" style="text-align:left;margin:6px 0 0"></p>
+    <div class="check" id="sp-check"></div>
+  </section>
+
+  <section class="panel" id="my-progress" aria-labelledby="mp-h">
+    <div class="panel-head"><div><h2 id="mp-h">📈 My Progress | నా ప్రగతి</h2><p>ఈ బ్రౌజర్‌లో సేవ్ అయిన మీ డైలీ క్విజ్ ఫలితాలు, ప్లానర్ చెక్‌లిస్ట్ పురోగతి.</p></div><button class="close" data-close>Close ✕</button></div>
+    <div id="mp-body"></div>
+    <div class="row"><a class="btn" style="text-decoration:none" href="mock-test.html">Take a mock test</a><button class="btn danger" id="mp-reset">Clear my progress</button></div>
+  </section>
+
+  </div>
   <div style="text-align:center"><a class="back" href="index.html">← Back to Main Website</a></div>
   <p class="note">Buckler Academy • Learn • Practice • Succeed</p>
 </main>
 <footer>© Buckler Academy. All rights reserved.</footer>
+
+<script>
+(function(){
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+function load(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}}
+function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+function todayKey(){var d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+
+/* ---------- panel switching ---------- */
+var ids=['daily-quiz','ap-gk','study-planner','my-progress'];
+function openPanel(id,scroll){
+  if(ids.indexOf(id)<0)return;
+  ids.forEach(function(i){$('#'+i).classList.toggle('open',i===id)});
+  $$('.card[data-open]').forEach(function(c){c.classList.toggle('active',c.getAttribute('data-open')===id)});
+  if(id==='my-progress')renderProgress();
+  if(scroll!==false)$('#'+id).scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'});
+}
+function closePanels(){ids.forEach(function(i){$('#'+i).classList.remove('open')});$$('.card[data-open]').forEach(function(c){c.classList.remove('active')})}
+$$('.card[data-open]').forEach(function(c){c.addEventListener('click',function(e){e.preventDefault();var id=c.getAttribute('data-open');history.replaceState(null,'','#'+id);openPanel(id)})});
+$$('[data-close]').forEach(function(b){b.addEventListener('click',function(){closePanels();history.replaceState(null,'',location.pathname);window.scrollTo({top:0})})});
+window.addEventListener('hashchange',function(){openPanel(location.hash.slice(1))});
+
+/* ---------- Daily quiz ---------- */
+var Q=[
+{q:'ఆంధ్రప్రదేశ్ రాష్ట్రం (తెలంగాణ ప్రాంతంతో కలిపి) ఏర్పడిన తేదీ?',o:['1 అక్టోబర్ 1953','1 నవంబర్ 1956','2 జూన్ 2014','26 జనవరి 1950'],a:1,e:'రాష్ట్రాల పునర్వ్యవస్థీకరణ చట్టం 1956 ప్రకారం 1 నవంబర్ 1956న ఆంధ్రప్రదేశ్ ఏర్పడింది.'},
+{q:'ఆంధ్ర రాష్ట్రం ఏర్పడినప్పుడు (1 అక్టోబర్ 1953) దాని రాజధాని ఏది?',o:['విజయవాడ','గుంటూరు','కర్నూలు','హైదరాబాద్'],a:2,e:'ఆంధ్ర రాష్ట్ర తొలి రాజధాని కర్నూలు; తొలి ముఖ్యమంత్రి టంగుటూరి ప్రకాశం పంతులు.'},
+{q:'పోలవరం బహుళార్థక సాధక ప్రాజెక్టు ఏ నదిపై ఉంది?',o:['కృష్ణా','గోదావరి','పెన్నా','తుంగభద్ర'],a:1,e:'పోలవరం ప్రాజెక్టు గోదావరి నదిపై ఉంది.'},
+{q:'శ్రీశైలం ఆనకట్ట ఏ నదిపై ఉంది?',o:['కృష్ణా','గోదావరి','పెన్నా','వంశధార'],a:0,e:'శ్రీశైలం ప్రాజెక్టు కృష్ణా నదిపై ఉంది.'},
+{q:'ఏప్రిల్ 2022 పునర్వ్యవస్థీకరణ తర్వాత ఆంధ్రప్రదేశ్‌లో జిల్లాల సంఖ్య?',o:['13','24','26','32'],a:2,e:'13 జిల్లాలు 26 జిల్లాలుగా పునర్వ్యవస్థీకరించబడ్డాయి.'},
+{q:'కూచిపూడి ఏ రాష్ట్రానికి చెందిన శాస్త్రీయ నృత్యం?',o:['తమిళనాడు','కేరళ','ఆంధ్రప్రదేశ్','ఒడిశా'],a:2,e:'కూచిపూడి ఆంధ్రప్రదేశ్ శాస్త్రీయ నృత్యం.'},
+{q:'ఆంధ్రప్రదేశ్ రాష్ట్ర జంతువు ఏది?',o:['చుక్కల జింక','కృష్ణజింక','పులి','ఏనుగు'],a:1,e:'కృష్ణజింక (Blackbuck) AP రాష్ట్ర జంతువు.'},
+{q:'సౌత్ కోస్ట్ రైల్వే జోన్ ప్రధాన కార్యాలయం ఎక్కడ?',o:['విజయవాడ','తిరుపతి','గుంటూరు','విశాఖపట్నం'],a:3,e:'సౌత్ కోస్ట్ రైల్వే జోన్ ప్రధాన కార్యాలయం విశాఖపట్నం.'},
+{q:'వంశధార నది ఏ ప్రాంతం వద్ద బంగాళాఖాతంలో కలుస్తుంది?',o:['కళింగపట్నం','మచిలీపట్నం','కాకినాడ','నిజాంపట్నం'],a:0,e:'వంశధార శ్రీకాకుళం జిల్లాలోని కళింగపట్నం వద్ద సముద్రంలో కలుస్తుంది.'},
+{q:'పురపాలికల ఎన్నికల నిర్వహణ బాధ్యత ఏ అధికరణ కింద రాష్ట్ర ఎన్నికల సంఘానిది?',o:['అధికరణ 243K','అధికరణ 243ZA','అధికరణ 324','అధికరణ 280'],a:1,e:'పురపాలికలకు 243ZA, పంచాయతీలకు 243K. అధికరణ 324 భారత ఎన్నికల సంఘానికి సంబంధించింది.'},
+{q:'భారత వాయుసేన 29వ అధిపతి (31 అక్టోబర్ 2026 నుంచి) ఎవరు?',o:['అమర్ ప్రీత్ సింగ్','వివేక్ రామ్ చౌధరి','ఆశుతోష్ దీక్షిత్','ధీరజ్ సేత్'],a:2,e:'ఎయిర్ చీఫ్ మార్షల్ ఆశుతోష్ దీక్షిత్ 29వ Chief of the Air Staff.'},
+{q:'నవంబర్ 2026లో AP తీరం వైపు వస్తున్న తీవ్ర తుఫాను పేరు?',o:['అర్నబ్','మురసు','మొంథా','డిత్వా'],a:1,e:'‘మురసు’ తుఫాను నవంబర్ 2–3 మధ్య ఒంగోలు సమీపంలో తీరం దాటే అవకాశం ఉందని అంచనా.'},
+{q:'International Solar Alliance (ISA) ప్రధాన కార్యాలయం ఎక్కడ?',o:['పారిస్','న్యూఢిల్లీ','గురుగ్రామ్','జెనీవా'],a:2,e:'ISA ప్రధాన కార్యాలయం గురుగ్రామ్ (హర్యానా)లో ఉంది.'},
+{q:'APPSC Group-2 (686 పోస్టులు) ఆన్‌లైన్ దరఖాస్తుల తేదీలు?',o:['6–27 అక్టోబర్ 2026','13 అక్టోబర్–2 నవంబర్ 2026','10–30 నవంబర్ 2026','1–9 నవంబర్ 2026'],a:2,e:'నోటిఫికేషన్ ప్రకారం 10 నవంబర్ నుంచి 30 నవంబర్ 2026 వరకు. అధికారిక వెబ్‌సైట్ psc.ap.gov.in చూడండి.'},
+{q:'రాష్ట్రాల పునర్వ్యవస్థీకరణ చట్టం ఏ సంవత్సరంలో వచ్చింది?',o:['1953','1956','1966','1973'],a:1,e:'States Reorganisation Act 1956 భాషా ప్రాతిపదికన రాష్ట్రాలను పునర్వ్యవస్థీకరించింది.'}
+];
+var dqOffset=0,dqSet=[],dqDone=0,dqScore=0;
+function dayNum(){var d=new Date();return Math.floor(new Date(d.getFullYear(),d.getMonth(),d.getDate()).getTime()/86400000)}
+function dqBuild(){
+  dqSet=[];var start=((dayNum()*5)+dqOffset*5)%Q.length;
+  for(var i=0;i<5;i++)dqSet.push(Q[(start+i)%Q.length]);
+  dqDone=0;dqScore=0;
+  var box=$('#dq-qs');box.innerHTML='';
+  dqSet.forEach(function(q,qi){
+    var w=document.createElement('div');w.className='qbox';
+    var p=document.createElement('p');p.textContent=(qi+1)+'. '+q.q;w.appendChild(p);
+    var bs=[];var why=document.createElement('div');why.className='why';why.textContent=q.e;
+    q.o.forEach(function(o,oi){
+      var b=document.createElement('button');b.type='button';b.className='opt';b.textContent='ABCD'[oi]+'. '+o;
+      b.addEventListener('click',function(){
+        bs.forEach(function(x){x.disabled=true});
+        if(oi===q.a){b.classList.add('ok');dqScore++}else{b.classList.add('no');bs[q.a].classList.add('ok')}
+        why.style.display='block';dqDone++;dqUpdate();
+      });
+      bs.push(b);w.appendChild(b);
+    });
+    w.appendChild(why);box.appendChild(w);
+  });
+  dqUpdate();
+}
+function dqUpdate(){
+  var s=$('#dq-score');
+  if(dqDone<5){s.textContent='స్కోరు: '+dqScore+' / '+dqDone+' (మొత్తం 5 ప్రశ్నలు)';return}
+  s.textContent='పూర్తయింది! మీ స్కోరు: '+dqScore+' / 5. మీ ప్రగతిలో సేవ్ అయింది.';
+  var h=load('buckler_quiz_history',[]);h.push({d:todayKey(),s:dqScore,t:5});save('buckler_quiz_history',h.slice(-60));
+}
+$('#dq-more').addEventListener('click',function(){dqOffset++;dqBuild()});
+$('#dq-retry').addEventListener('click',dqBuild);
+$('#dq-date').textContent=new Date().toLocaleDateString('te-IN',{day:'numeric',month:'long',year:'numeric',weekday:'long'})+' · రోజుకు 5 కొత్త ప్రశ్నలు, సమాధానంతో వివరణ';
+dqBuild();
+
+/* ---------- AP special GK ---------- */
+var GK={
+'చరిత్ర & ఏర్పాటు':[
+['ఆంధ్ర రాష్ట్రం (1953)','1 అక్టోబర్ 1953న మద్రాసు రాష్ట్రం నుంచి విడిపోయి ఆంధ్ర రాష్ట్రం ఏర్పడింది. రాజధాని కర్నూలు; తొలి ముఖ్యమంత్రి టంగుటూరి ప్రకాశం పంతులు.'],
+['ఆంధ్రప్రదేశ్ (1956)','1 నవంబర్ 1956న ఆంధ్ర రాష్ట్రం, తెలంగాణ ప్రాంతం కలిసి ఆంధ్రప్రదేశ్ ఏర్పడింది (States Reorganisation Act 1956). రాజధాని హైదరాబాద్.'],
+['పునర్వ్యవస్థీకరణ (2014)','2 జూన్ 2014న తెలంగాణ ప్రత్యేక రాష్ట్రంగా ఏర్పడింది. AP పునర్వ్యవస్థీకరణ చట్టం 2014 అమలులోకి వచ్చింది.'],
+['అమరావతి – ఏకైక రాజధాని','AP పునర్వ్యవస్థీకరణ (సవరణ) చట్టం 2026 ద్వారా 2014 చట్టంలోని సెక్షన్ 5ను సవరించి అమరావతిని ఏకైక, శాశ్వత రాజధానిగా గుర్తించారు.']],
+'భూగోళశాస్త్రం':[
+['నదులు','గోదావరి, కృష్ణా, పెన్నా, తుంగభద్ర, వంశధార, నాగావళి ప్రధాన నదులు. గోదావరిపై పోలవరం, కృష్ణాపై శ్రీశైలం, నాగార్జున సాగర్ ప్రాజెక్టులు.'],
+['తీరరేఖ','మన దేశంలో గుజరాత్ తర్వాత అత్యంత పొడవైన తీరరేఖ (సుమారు 974 కి.మీ.) ఆంధ్రప్రదేశ్‌కు ఉంది.'],
+['జిల్లాలు','ఏప్రిల్ 2022 నుంచి 26 జిల్లాలు (గతంలో 13).'],
+['రైల్వే జోన్','సౌత్ కోస్ట్ రైల్వే జోన్ ప్రధాన కార్యాలయం విశాఖపట్నం; గుంతకల్, గుంటూరు, విజయవాడ డివిజన్లు ఇందులో ఉన్నాయి.']],
+'రాష్ట్ర చిహ్నాలు & సంస్కృతి':[
+['రాష్ట్ర చిహ్నాలు','రాష్ట్ర జంతువు: కృష్ణజింక; పక్షి: రామచిలుక (రోజ్-రింగ్డ్ పారాకీట్); వృక్షం: వేప; పుష్పం: మల్లె.'],
+['శాస్త్రీయ నృత్యం','కూచిపూడి – కృష్ణా జిల్లాలోని కూచిపూడి గ్రామం నుంచి ఉద్భవించింది.'],
+['అరకు కౌనీ','గిరిజనుల సంప్రదాయ చిరుధాన్యాల ఆధారిత ఆహార మెనూ – రాష్ట్ర ప్రభుత్వం మార్చి 2026లో ప్రారంభించింది.'],
+['పవన్ కళ్యాణ్‌కు గౌరవం','కెంజుట్సు (జపనీస్ మార్షల్ ఆర్ట్)లో గౌరవం పొందిన తొలి భారతీయుడు (జనవరి 2026).']],
+'తాజా అంశాలు (2026)':[
+['వెలిగొండ ప్రాజెక్టు','పూల సుబ్బయ్య వెలిగొండ ప్రాజెక్టు ఫేజ్-I ను 31 ఆగస్టు 2026న ముఖ్యమంత్రి ప్రారంభించారు. శంకుస్థాపన 5 మార్చి 1996.'],
+['అక్షర ఆంధ్ర','రాష్ట్ర అక్షరాస్యత 2024లో 72.6% నుంచి 2026లో 82.1%కి పెరిగిందని నివేదిక. 2027 సెప్టెంబర్ నాటికి 100% లక్ష్యం.'],
+['తుఫాన్లు','‘అర్నబ్’ 28 అక్టోబర్ రాత్రి తీరం దాటింది. ‘మురసు’ తీవ్ర తుఫాను నవంబర్ 2–3 మధ్య ఒంగోలు సమీపంలో తీరం దాటే అవకాశం ఉంది.'],
+['పట్టణ స్థానిక సంస్థల ఎన్నికలు','1 నవంబర్ 2026న 92 పట్టణ స్థానిక సంస్థల్లో పోలింగ్ జరిగింది.']]
+};
+var tabs=$('#gk-tabs'),gb=$('#gk-body'),first=true;
+Object.keys(GK).forEach(function(name){
+  var b=document.createElement('button');b.type='button';b.className='tab'+(first?' on':'');b.textContent=name;b.setAttribute('role','tab');
+  b.addEventListener('click',function(){$$('.tab',tabs).forEach(function(t){t.classList.remove('on')});b.classList.add('on');gkShow(name)});
+  tabs.appendChild(b);first=false;
+});
+function gkShow(name){gb.innerHTML='';GK[name].forEach(function(it){var d=document.createElement('div');d.className='gk';var h=document.createElement('h4');h.textContent=it[0];var p=document.createElement('p');p.textContent=it[1];d.appendChild(h);d.appendChild(p);gb.appendChild(d)})}
+gkShow(Object.keys(GK)[0]);
+
+/* ---------- Study planner ---------- */
+var hs=$('#sp-hrs');for(var h=2;h<=12;h++){var o=document.createElement('option');o.value=h;o.textContent=h+' hours';if(h===6)o.selected=true;hs.appendChild(o)}
+var dt=$('#sp-date');dt.min=todayKey();
+var saved=load('buckler_plan_settings',null);if(saved){if(saved.date)dt.value=saved.date;hs.value=saved.hrs||6;$('#sp-days').value=saved.days||7}
+var SUBJ={
+foundation:[['ఆంధ్రప్రదేశ్ చరిత్ర & సంస్కృతి',15],['భారత చరిత్ర',10],['భారత రాజ్యాంగం & పాలిటీ',15],['ఆర్థిక వ్యవస్థ (భారత్ & AP)',15],['భౌగోళిక శాస్త్రం',12],['సైన్స్ & టెక్నాలజీ',8],['కరెంట్ అఫైర్స్',10],['మెంటల్ ఎబిలిటీ & రీజనింగ్',15]],
+revision:[['ఆంధ్రప్రదేశ్ చరిత్ర & సంస్కృతి',14],['భారత చరిత్ర',8],['భారత రాజ్యాంగం & పాలిటీ',14],['ఆర్థిక వ్యవస్థ (భారత్ & AP)',14],['భౌగోళిక శాస్త్రం',10],['సైన్స్ & టెక్నాలజీ',6],['కరెంట్ అఫైర్స్',20],['మెంటల్ ఎబిలిటీ & రీజనింగ్',14]],
+mock:[['ఫుల్ మాక్ టెస్టులు (mock-test)',40],['తప్పుల విశ్లేషణ & రివిజన్',30],['కరెంట్ అఫైర్స్',20],['మెంటల్ ఎబిలిటీ ప్రాక్టీస్',10]]};
+function tbl(arr,perWeek){
+  var t='<div class="tw"><table><thead><tr><th>సబ్జెక్టు</th><th>వాటా</th><th>వారానికి గంటలు</th></tr></thead><tbody>';
+  arr.forEach(function(r){t+='<tr><td>'+r[0]+'</td><td>'+r[1]+'%</td><td>'+(perWeek*r[1]/100).toFixed(1)+'</td></tr>'});
+  return t+'</tbody></table></div>';
+}
+function makePlan(){
+  var out=$('#sp-out'),v=dt.value,hrs=+hs.value,days=+$('#sp-days').value;
+  var weeks=24;
+  if(v){var diff=Math.ceil((new Date(v+'T00:00:00')-new Date(todayKey()+'T00:00:00'))/604800000);if(diff<1){out.innerHTML='<p class="empty">పరీక్ష తేదీ ఈ రోజు తర్వాత ఉండాలి. సరైన తేదీ ఎంచుకోండి.</p>';return}weeks=diff}
+  else{out.innerHTML='<p class="empty">తేదీ ఇవ్వలేదు కాబట్టి 24 వారాల నమూనా ప్లాన్ చూపిస్తున్నాం.</p>'}
+  save('buckler_plan_settings',{date:v,hrs:hrs,days:days});
+  var perWeek=hrs*days,f,r,m;
+  if(weeks>=6){f=Math.round(weeks*.5);r=Math.round(weeks*.3);m=weeks-f-r}else if(weeks>=2){f=0;r=weeks-1;m=1}else{f=0;r=0;m=1}
+  var html=(v?'':out.innerHTML)+'<p style="font-size:14px;line-height:1.7"><b>'+weeks+' వారాలు</b> · వారానికి <b>'+perWeek+' గంటలు</b> ('+hrs+' గంటలు × '+days+' రోజులు)</p>';
+  if(f)html+='<div class="phase">దశ 1 – పునాది (Foundation): '+f+' వారాలు</div><p class="note" style="text-align:left;margin:0">అన్ని సబ్జెక్టులు మొదటి నుంచి చదివి నోట్స్ తయారు చేసుకోండి.</p>'+tbl(SUBJ.foundation,perWeek);
+  if(r)html+='<div class="phase">దశ '+(f?2:1)+' – రివిజన్: '+r+' వారాలు</div><p class="note" style="text-align:left;margin:0">నోట్స్ రివైజ్ చేయండి, సబ్జెక్టు వారీ MCQs సాధన చేయండి. కరెంట్ అఫైర్స్‌కు ఎక్కువ సమయం.</p>'+tbl(SUBJ.revision,perWeek);
+  html+='<div class="phase">చివరి దశ – మాక్ టెస్టులు: '+m+' వారాలు</div><p class="note" style="text-align:left;margin:0">టైమ్డ్ టెస్టులు రాసి తప్పులు విశ్లేషించండి.</p>'+tbl(SUBJ.mock,perWeek);
+  html+='<p class="note" style="text-align:left">రోజువారీ సూచన: ఉదయం కొత్త టాపిక్, మధ్యాహ్నం MCQs, సాయంత్రం కరెంట్ అఫైర్స్, రాత్రి 20 నిమిషాల రివిజన్.</p>';
+  out.innerHTML=html;
+}
+$('#sp-make').addEventListener('click',makePlan);
+
+var CHK={
+'ఆంధ్రప్రదేశ్ చరిత్ర':['శాతవాహనులు, ఇక్ష్వాకులు','కాకతీయులు, రెడ్డి రాజులు','విజయనగర సామ్రాజ్యం','ఆంధ్ర ఉద్యమం & రాష్ట్ర ఏర్పాటు'],
+'భారత చరిత్ర':['ప్రాచీన & మధ్యయుగ భారతం','ఆధునిక భారతం','స్వాతంత్ర్య ఉద్యమం'],
+'పాలిటీ':['రాజ్యాంగ ప్రవేశిక & ప్రాథమిక హక్కులు','కేంద్ర, రాష్ట్ర ప్రభుత్వాలు','పంచాయతీరాజ్ & పురపాలికలు (73, 74 సవరణలు)','రాజ్యాంగబద్ధ సంస్థలు'],
+'ఆర్థిక వ్యవస్థ':['భారత ఆర్థిక వ్యవస్థ ప్రాథమికాలు','ప్రణాళికలు & NITI ఆయోగ్','AP ఆర్థిక సర్వే','ప్రభుత్వ పథకాలు'],
+'భౌగోళిక శాస్త్రం':['భారత భౌతిక భూగోళం','AP నదులు, ప్రాజెక్టులు','వాతావరణం, పంటలు, ఖనిజాలు'],
+'సైన్స్ & టెక్':['సాధారణ విజ్ఞానం','అంతరిక్షం & రక్షణ','పర్యావరణం & విపత్తులు'],
+'కరెంట్ అఫైర్స్ & రీజనింగ్':['గత 12 నెలల కరెంట్ అఫైర్స్','రోజువారీ కరెంట్ అఫైర్స్ నోట్స్','మెంటల్ ఎబిలిటీ ప్రాక్టీస్','మాక్ టెస్టులు (కనీసం 5)']};
+var done=load('buckler_plan_done',{});
+function chkRender(){
+  var box=$('#sp-check');box.innerHTML='';var total=0,n=0;
+  Object.keys(CHK).forEach(function(g){
+    var fs=document.createElement('fieldset');var lg=document.createElement('legend');lg.textContent=g;fs.appendChild(lg);
+    CHK[g].forEach(function(t){
+      var k=g+'|'+t;total++;if(done[k])n++;
+      var l=document.createElement('label');var c=document.createElement('input');c.type='checkbox';c.checked=!!done[k];
+      c.addEventListener('change',function(){if(c.checked)done[k]=1;else delete done[k];save('buckler_plan_done',done);chkStat()});
+      l.appendChild(c);l.appendChild(document.createTextNode(t));fs.appendChild(l);
+    });
+    box.appendChild(fs);
+  });
+  chkStat.total=total;chkStat();
+}
+function chkStat(){var n=Object.keys(done).length,t=chkStat.total||1;var p=Math.round(n*100/t);$('#sp-bar').style.width=p+'%';$('#sp-pct').textContent=n+' / '+t+' టాపిక్స్ పూర్తి ('+p+'%)'}
+chkRender();
+
+/* ---------- Progress ---------- */
+function renderProgress(){
+  var h=load('buckler_quiz_history',[]),body=$('#mp-body');done=load('buckler_plan_done',{});
+  var tot=0;Object.keys(CHK).forEach(function(g){tot+=CHK[g].length});
+  var pct=Math.round(Object.keys(done).length*100/tot);
+  var html='';
+  if(!h.length){html+='<p class="empty">ఇంకా క్విజ్ ఫలితాలు లేవు. Daily Quiz పూర్తి చేస్తే ఇక్కడ మీ స్కోర్లు కనిపిస్తాయి.</p>'}
+  else{
+    var sumS=0,sumT=0,best=0,days={};h.forEach(function(x){sumS+=x.s;sumT+=x.t;best=Math.max(best,Math.round(x.s*100/x.t));days[x.d]=1});
+    var avg=Math.round(sumS*100/sumT);
+    var streak=0,d=new Date();while(true){var k=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');if(days[k]){streak++;d.setDate(d.getDate()-1)}else break}
+    html+='<div class="stats"><div class="stat"><b>'+h.length+'</b><span>క్విజ్‌లు రాశారు</span></div><div class="stat"><b>'+avg+'%</b><span>సగటు స్కోరు</span></div><div class="stat"><b>'+best+'%</b><span>అత్యుత్తమ స్కోరు</span></div><div class="stat"><b>'+streak+'</b><span>రోజుల వరుస (streak)</span></div></div>';
+    html+='<h3 style="margin:0 0 8px;font-size:15px;color:var(--navy)">చివరి క్విజ్ ఫలితాలు</h3><div class="hist" role="img" aria-label="Recent quiz scores">';
+    h.slice(-14).forEach(function(x){var p=Math.round(x.s*100/x.t);html+='<div title="'+x.d+': '+x.s+'/'+x.t+'">'+x.s+'/'+x.t+'<i style="height:'+Math.max(p,3)+'%"></i><span>'+x.d.slice(5)+'</span></div>'});
+    html+='</div>';
+  }
+  var mh=load('buckler_mock_history',[]);
+  html+='<h3 style="margin:20px 0 8px;font-size:15px;color:var(--navy)">మాక్ టెస్టులు</h3>';
+  if(!mh.length){html+='<p class="empty">ఇంకా మాక్ టెస్ట్ ఫలితాలు లేవు. టెస్ట్ రాసి Submit చేస్తే ఇక్కడ కనిపిస్తాయి.</p>'}
+  else{
+    var ms=0,mt=0,mb=0;mh.forEach(function(x){ms+=x.s;mt+=x.t;mb=Math.max(mb,Math.round(x.s*100/x.t))});
+    html+='<div class="stats"><div class="stat"><b>'+mh.length+'</b><span>మాక్ టెస్టులు</span></div><div class="stat"><b>'+Math.round(ms*100/mt)+'%</b><span>సగటు స్కోరు</span></div><div class="stat"><b>'+mb+'%</b><span>అత్యుత్తమ స్కోరు</span></div><div class="stat"><b>'+mh[mh.length-1].s+'/'+mh[mh.length-1].t+'</b><span>చివరి టెస్ట్</span></div></div>';
+    html+='<div class="tw"><table><thead><tr><th>తేదీ</th><th>సబ్జెక్టు</th><th>స్కోరు</th></tr></thead><tbody>';
+    mh.slice(-8).reverse().forEach(function(x){html+='<tr><td>'+x.d+'</td><td></td><td>'+x.s+' / '+x.t+' ('+Math.round(x.s*100/x.t)+'%)</td></tr>'.replace('<td></td>','<td>'+String(x.sub).replace(/[<>&]/g,'')+'</td>')});
+    html+='</tbody></table></div>';
+  }
+  html+='<h3 style="margin:20px 0 8px;font-size:15px;color:var(--navy)">సిలబస్ చెక్‌లిస్ట్: '+pct+'%</h3><div class="bar"><i style="width:'+pct+'%"></i></div>';
+  html+='<p class="note" style="text-align:left">ఈ డేటా మీ బ్రౌజర్‌లో మాత్రమే సేవ్ అవుతుంది.</p>';
+  body.innerHTML=html;
+}
+$('#mp-reset').addEventListener('click',function(){if(confirm('క్విజ్, మాక్ టెస్ట్ ఫలితాలు, ప్లానర్ చెక్‌లిస్ట్ పూర్తిగా తొలగించాలా?')){try{localStorage.removeItem('buckler_quiz_history');localStorage.removeItem('buckler_mock_history');localStorage.removeItem('buckler_plan_done');localStorage.removeItem('buckler_plan_settings')}catch(e){}done={};chkRender();renderProgress()}});
+
+if(location.hash)openPanel(location.hash.slice(1),false);
+})();
+</script>
 </body>
 </html>
