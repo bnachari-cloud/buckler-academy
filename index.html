@@ -827,6 +827,19 @@ footer{background:#17243a!important;color:#d9e1ed!important}
 <div class="section" id="current-affairs" style="background:linear-gradient(180deg,#FFF9E8 0%,#F0F7F0 100%);border-top:4px solid #D4880A;">
   <div class="section-title" style="color:#003F87;">📰 APPSC Group-2 — నేటి కరెంట్ అఫైర్స్</div>
   <div class="section-sub">3 నవంబర్ 2026 · తెలుగు మీడియం · Prelims quick revision · <strong>చివరి నవీకరణ: 3 నవంబర్ 2026</strong></div>
+  <style>
+  .wa-bar{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px}
+  .wa-btn{font:inherit;font-size:13px;font-weight:700;border-radius:22px;padding:9px 16px;cursor:pointer;border:1px solid #1B8F4B;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+  .wa-btn.fill{background:#25D366;color:#fff;border-color:#25D366}
+  .wa-btn.line{background:#fff;color:#17703B}
+  .wa-btn:hover{filter:brightness(.95)}
+  .wa-card-share{margin-top:10px;font:inherit;font-size:12px;font-weight:700;color:#17703B;background:#fff;border:1px solid #25D366;border-radius:16px;padding:5px 12px;cursor:pointer}
+  .wa-card-share:hover{background:#eafbf0}
+  </style>
+  <div class="wa-bar">
+    <button type="button" class="wa-btn fill" onclick="waShareAll()">📲 WhatsApp లో షేర్ చేయండి</button>
+    <button type="button" class="wa-btn line" id="wa-copy-btn" onclick="waCopyAll()">📋 నేటి సందేశం కాపీ చేయండి</button>
+  </div>
   <div class="about-grid">
 <div class="about-card" style="border-left-color:#C62828;">
   <h3>🌀 1. తీవ్ర తుఫాను ‘మురసు’ (Murasu) – దక్షిణ ఆంధ్ర తీరం దాటింది</h3>
@@ -895,6 +908,46 @@ footer{background:#17243a!important;color:#d9e1ed!important}
   </div>
   
   
+<script>
+(function(){
+  var DAILY = "📰 *APPSC Group-2 నేటి కరెంట్ అఫైర్స్ – 3 నవంబర్ 2026*\n\n"
+  +"1️⃣ 🌀 తీవ్ర తుఫాను ‘మురసు’ ఒంగోలు సమీపంలో (నెల్లూరు–నర్సాపురం మధ్య) తీరం దాటింది – గాలి వేగం 100–110 కి.మీ./గం.\n"
+  +"2️⃣ 🗳️ AP పట్టణ స్థానిక సంస్థల ఎన్నికలు – 92 సంస్థల్లో ఓట్ల లెక్కింపు; పోలింగ్ 62.16%\n"
+  +"3️⃣ ⚓ 8 నెక్స్ట్ జనరేషన్ కార్వెట్లకు ₹53,866.50 కోట్ల ఒప్పందాలు – GRSE 5, గోవా షిప్‌యార్డ్ 3\n"
+  +"4️⃣ 🛳️ సోమాలియా తీరంలో ‘Azini’ నౌక విడుదల – 20 మంది సురక్షితం\n"
+  +"5️⃣ ⚖️ బానిస కార్మికుల పునరావాసంపై సుప్రీంకోర్టు ఆదేశాలు – 7 రోజుల్లో సహాయం; అధికరణ 23\n"
+  +"6️⃣ 🌐 అమెరికా మధ్యంతర ఎన్నికలు – 435 హౌస్, 35 సెనేట్ స్థానాలు\n"
+  +"7️⃣ 📋 APPSC Group-2: దరఖాస్తులు 10–30 నవంబర్\n\n"
+  +"👉 పూర్తి నోట్స్ + MCQs: ";
+  function pageUrl(){ return location.href.split('#')[0] + '#current-affairs'; }
+  function openWA(text){ window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank', 'noopener'); }
+  window.waShareAll = function(){ openWA(DAILY + pageUrl()); };
+  window.waCopyAll = function(){
+    var txt = DAILY + pageUrl(), btn = document.getElementById('wa-copy-btn');
+    function ok(){ if(btn){ var o = btn.textContent; btn.textContent = '✅ కాపీ అయింది'; setTimeout(function(){ btn.textContent = o; }, 2000); } }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(ok, fallback);
+    } else { fallback(); }
+    function fallback(){
+      var t = document.createElement('textarea'); t.value = txt; t.style.position = 'fixed'; t.style.opacity = '0';
+      document.body.appendChild(t); t.select();
+      try{ document.execCommand('copy'); ok(); }catch(e){}
+      document.body.removeChild(t);
+    }
+  };
+  document.querySelectorAll('#current-affairs .about-grid > .about-card').forEach(function(c){
+    var h = c.querySelector('h3'); if(!h) return;
+    var ps = c.querySelectorAll('p');
+    var detail = ps.length > 1 ? ps[1].textContent.trim() : '';
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'wa-card-share'; b.textContent = '📲 షేర్';
+    b.onclick = function(){
+      openWA('📰 *' + h.textContent.trim() + '*\n\n' + detail + '\n\n👉 పూర్తి నోట్స్: ' + pageUrl());
+    };
+    c.appendChild(b);
+  });
+})();
+</script>
 <div class="section" id="ca-2026">
 <style>
 #ca-2026{max-width:1160px;margin:28px auto;padding:35px 28px;border-radius:18px;border:1px solid #e7eaf0;box-shadow:0 8px 28px #18253b08;background:#fff;color:#17243a}
