@@ -85,6 +85,19 @@ th,td{text-align:left;padding:8px 10px;border-bottom:1px solid #e6edf5}th{backgr
 @media(max-width:800px){.gkgrid,.check{grid-template-columns:1fr}.form{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
+<style id="gk-pdf-style">
+.gkpdf{margin-top:22px;padding-top:18px;border-top:2px dashed #dbe4ef}
+.gkpdf h3{margin:0 0 4px;font-size:17px;color:var(--navy)}
+.gkpdf>p{margin:0 0 14px;font-size:12.5px;color:var(--muted);line-height:1.6}
+.gkpdf-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.gkpdf-item{display:flex;gap:12px;align-items:flex-start;background:#f8fafd;border:1px solid #e1e8f1;border-left:4px solid var(--green);border-radius:12px;padding:13px 14px;text-decoration:none;color:inherit;transition:.2s}
+.gkpdf-item:hover{border-color:#9db9d8;border-left-color:var(--gold);box-shadow:0 6px 18px #17385d14}
+.gkpdf-item .gi{font-size:22px;line-height:1}
+.gkpdf-item b{display:block;font-size:14px;color:var(--navy);margin-bottom:3px}
+.gkpdf-item span.d{display:block;font-size:12px;line-height:1.5;color:var(--muted)}
+.gkpdf-item span.a{display:block;margin-top:6px;font-size:12px;font-weight:700;color:var(--green)}
+@media(max-width:700px){.gkpdf-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <div class="topline"></div>
@@ -104,7 +117,8 @@ th,td{text-align:left;padding:8px 10px;border-bottom:1px solid #e6edf5}th{backgr
     <a class="card" href="index.html#resources"><span class="ico">📚</span><span><h3>Study Materials</h3><p>Study resources and preparation material for learners.</p><span class="arrow">Explore Materials ↗</span></span></a>
     <a class="card" href="index.html#youtube-classes"><span class="ico">▶️</span><span><h3>Video Classes</h3><p>Watch topic-wise lessons and video classes.</p><span class="arrow">Watch Classes ↗</span></span></a>
     <a class="card" href="index.html#current-affairs"><span class="ico">📰</span><span><h3>Current Affairs</h3><p>Daily and monthly current affairs updates.</p><span class="arrow">Read Updates ↗</span></span></a>
-    <a class="card" href="index.html#resources"><span class="ico">📄</span><span><h3>Previous Papers</h3><p>Find available examination papers in the study resources.</p><span class="arrow">View Resources ↗</span></span></a>
+    <a class="card" href="index.html#pdf-material"><span class="ico">📄</span><span><h3>Previous Papers &amp; PDF Material</h3><p>Official syllabus, previous papers and free soft-copy PDFs.</p><span class="arrow">Open PDF Material ↗</span></span></a>
+    <a class="card" href="index.html#special-gk"><span class="ico">⭐</span><span><h3>Special GK Videos</h3><p>Very important GK topics with Telugu YouTube video links.</p><span class="arrow">Watch GK Videos ↗</span></span></a>
     <a class="card featured" href="mock-test.html"><span class="ico">⏱️</span><span><h3>Online Mock Tests</h3><p>Attempt timed tests, submit answers and review your result.</p><span class="arrow">Start Mock Test ↗</span></span></a>
     <a class="card" href="#daily-quiz" data-open="daily-quiz"><span class="ico">🎯</span><span><h3>Daily Quiz / Practice MCQs</h3><p>Five fresh questions every day, with answers explained.</p><span class="arrow">Open Quiz ↓</span></span></a>
     <a class="card" href="#ap-gk" data-open="ap-gk"><span class="ico">🌾</span><span><h3>AP Special GK</h3><p>Andhra Pradesh history, geography, symbols and current topics.</p><span class="arrow">Open AP GK ↓</span></span></a>
@@ -127,6 +141,20 @@ th,td{text-align:left;padding:8px 10px;border-bottom:1px solid #e6edf5}th{backgr
     <div class="panel-head"><div><h2 id="gk-h">🌾 AP Special GK | ఆంధ్రప్రదేశ్ ప్రత్యేకం</h2><p>APPSC Group-2 కోసం ఆంధ్రప్రదేశ్ ముఖ్యాంశాలు. తేదీలు, గణాంకాలను పరీక్షకు ముందు అధికారిక వనరులతో సరిచూసుకోండి.</p></div><button class="close" data-close>Close ✕</button></div>
     <div class="tabs" id="gk-tabs" role="tablist"></div>
     <div class="gkgrid" id="gk-body"></div>
+  <div class="gkpdf" id="gk-pdf">
+    <h3>📥 AP Special GK — PDF Materials</h3>
+    <p>Soft copies and official documents for Andhra Pradesh GK. Links open in a new tab; confirm figures with the latest official releases.</p>
+    <div class="gkpdf-grid">
+      <a class="gkpdf-item" href="https://adda247.com/jobs/wp-content/uploads/sites/9/2025/02/28171012/AP-Socio-Economic-Survey-2024-25.pdf" target="_blank" rel="noopener"><span class="gi">📄</span><span><b>AP Socio-Economic Survey 2024-25 (PDF)</b><span class="d">Planning Dept., Govt. of AP — state economy, public finance, sectors, Swarna Andhra Vision 2047. Must-read for AP Economy.</span><span class="a">⬇ Open PDF ↗</span></span></a>
+      <a class="gkpdf-item" href="https://www.nabard.org/auth/writereaddata/tender/pub_2208250520151800.pdf" target="_blank" rel="noopener"><span class="gi">🌾</span><span><b>NABARD State Focus Paper — Andhra Pradesh 2025-26 (PDF)</b><span class="d">Sector-wise credit potential: agriculture, MSME, housing, renewable energy and infrastructure in AP.</span><span class="a">⬇ Open PDF ↗</span></span></a>
+      <a class="gkpdf-item" href="https://prsindia.org/budgets/states/andhra-pradesh-budget-analysis-2026-27" target="_blank" rel="noopener"><span class="gi">💰</span><span><b>AP Budget Analysis 2026-27 (PRS)</b><span class="d">Sector-wise expenditure, schemes and key numbers of the AP Budget 2026-27.</span><span class="a">📄 Open ↗</span></span></a>
+      <a class="gkpdf-item" href="https://apfinance.gov.in" target="_blank" rel="noopener"><span class="gi">🏦</span><span><b>AP Finance Department — Budget Documents</b><span class="d">Official AP budget volumes (PDF) — Budget at a Glance, outcome budget and scheme details.</span><span class="a">🌐 Open Site ↗</span></span></a>
+      <a class="gkpdf-item" href="index.html#resources"><span class="gi">🏛️</span><span><b>AP History — Full Telugu Study Material (PDF)</b><span class="d">Buckler Academy notes: 16 chapters of AP History with MCQs and quick revision.</span><span class="a">📖 Open on Dashboard ↗</span></span></a>
+      <a class="gkpdf-item" href="https://psc.ap.gov.in/Documents/Syllabus1/GROUP-II_Syllabus.PDF" target="_blank" rel="noopener"><span class="gi">📋</span><span><b>APPSC Group-II Syllabus (Official PDF)</b><span class="d">Official scheme and syllabus — Paper-II covers AP history, society, polity and economy.</span><span class="a">📄 Open PDF ↗</span></span></a>
+      <a class="gkpdf-item" href="index.html#pdf-material"><span class="gi">🧾</span><span><b>Previous Papers & More PDF Material</b><span class="d">All previous papers and free soft-copy PDFs on the main dashboard.</span><span class="a">📥 Open Material ↗</span></span></a>
+      <a class="gkpdf-item" href="https://www.ap.gov.in" target="_blank" rel="noopener"><span class="gi">🌴</span><span><b>AP Government Portal</b><span class="d">Departments, schemes and publications of the Government of Andhra Pradesh.</span><span class="a">🌐 Open Site ↗</span></span></a>
+    </div>
+  </div>
   </section>
 
   <section class="panel" id="study-planner" aria-labelledby="sp-h">
