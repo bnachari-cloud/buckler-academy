@@ -707,6 +707,29 @@ footer{background:#17243a!important;color:#d9e1ed!important}
 #chat-fab,#chat-window,#emp-login-btn,#login-panel,.login-panel,#privacy-policy,#privacy-panel,.privacy-panel,.pp-hero,.pp-section{display:none!important}
 .academy-footer{background:#17243a;color:#e1e7f0;padding:28px max(6vw,22px) 20px;margin-top:45px}.academy-footer-brand{display:flex;align-items:center;gap:13px}.academy-footer-mark{display:grid;place-items:center;width:42px;height:42px;border:1px solid #f2b544;border-radius:12px;color:#f2b544;font-weight:900}.academy-footer-brand strong{font-size:17px;color:#fff}.academy-footer-brand p{font-size:12px;color:#b8c4d6;margin-top:4px}.academy-footer-links{display:flex;gap:20px;flex-wrap:wrap;margin:22px 0}.academy-footer-links a{font-size:12px;color:#e1e7f0;text-decoration:none}.academy-footer-links a:hover{color:#ffc96a}.academy-footer-bottom{border-top:1px solid #ffffff20;padding-top:15px;color:#9eacc1;font-size:11px}
 
+
+/* V5 FIX: make all APPSC Group-2 syllabus text black */
+#group2-syllabus-2026,
+#group2-syllabus-2026 p,
+#group2-syllabus-2026 span,
+#group2-syllabus-2026 div,
+#group2-syllabus-2026 li,
+#group2-syllabus-2026 ol,
+#group2-syllabus-2026 ul,
+#group2-syllabus-2026 th,
+#group2-syllabus-2026 td,
+#group2-syllabus-2026 summary,
+#group2-syllabus-2026 a,
+#group2-syllabus-2026 b,
+#group2-syllabus-2026 strong,
+#group2-syllabus-2026 .syl26-h,
+#group2-syllabus-2026 .syl26-sub,
+#group2-syllabus-2026 .syl26-warn,
+#group2-syllabus-2026 .syl26-foot,
+#group2-syllabus-2026 .dbody {
+  color:#000000!important;
+  text-shadow:none!important;
+}
 </style>
 
 <style id="buckler-study-content-visibility-fix">
@@ -1494,9 +1517,6 @@ footer{background:#17243a!important;color:#d9e1ed!important}
   <style>
 .syl26{margin:14px 0 6px;border:1px solid rgba(255,215,0,.35);background:rgba(255,255,255,.05);border-radius:10px;padding:16px;color:#E3F2FD}
 .syl26-h{font-family:'Tiro Telugu',serif;font-size:17px;color:#FFD700;margin-bottom:4px;line-height:1.4}
-/* High-contrast title for the APPSC Group-2 syllabus section */
-#group2-syllabus-2026 .syl26-h{display:block!important;color:#FFFFFF!important;background:linear-gradient(90deg,#123B68,#075985)!important;border-left:5px solid #FFD700!important;border-radius:7px!important;padding:12px 14px!important;margin:0 0 10px!important;font-size:18px!important;font-weight:800!important;line-height:1.6!important;text-shadow:0 1px 3px rgba(0,0,0,.75)!important;opacity:1!important;visibility:visible!important}
-#group2-syllabus-2026 .syl26-h *{color:#FFFFFF!important}
 .syl26-sub{font-size:12px;color:#90CAF9;margin-bottom:12px;line-height:1.6}
 .syl26-warn{display:flex;gap:10px;background:rgba(255,152,0,.13);border:1px solid rgba(255,152,0,.35);border-radius:6px;padding:9px 12px;font-size:12.5px;color:#FFE0B2;line-height:1.6;margin-bottom:14px}
 .syl26-tw{overflow-x:auto;margin-bottom:12px}
@@ -1513,6 +1533,149 @@ footer{background:#17243a!important;color:#d9e1ed!important}
 .syl26-act{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .syl26-foot{font-size:11.5px;color:#90CAF9;margin-top:10px;line-height:1.6}
 @media(max-width:600px){.syl26-h{font-size:15px}.syl26 summary{font-size:13px}}
+
+/* V4 FIX: preserve the original Buckler Academy resources-section background */
+
+#group2-syllabus-2026{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  height:auto!important;
+  max-height:none!important;
+  overflow:visible!important;
+  background:transparent!important;
+  color:#000000!important;
+  border:1px solid rgba(255,215,0,.35)!important;
+  padding:16px!important;
+}
+
+#group2-syllabus-2026 *{
+  box-sizing:border-box;
+}
+
+#group2-syllabus-2026 .syl26-h{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  color:#000000!important;
+  background:#FFF2CC!important;
+  border-left:4px solid #D6A000!important;
+  border-radius:6px!important;
+  padding:12px 14px!important;
+  font-weight:800!important;
+  line-height:1.6!important;
+}
+
+#group2-syllabus-2026 .syl26-sub,
+#group2-syllabus-2026 .syl26-foot{
+  display:block!important;
+  color:#000000!important;
+  visibility:visible!important;
+  opacity:1!important;
+  background:transparent!important;
+}
+
+#group2-syllabus-2026 .syl26-warn{
+  display:flex!important;
+  color:#000000!important;
+  background:#FFF0D5!important;
+  border:1px solid #E0A13A!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+
+#group2-syllabus-2026 .syl26-tw{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  overflow-x:auto!important;
+}
+
+#group2-syllabus-2026 table{
+  display:table!important;
+  visibility:visible!important;
+  opacity:1!important;
+  color:#000000!important;
+  background:#FFFFFF!important;
+  border-collapse:collapse!important;
+}
+
+#group2-syllabus-2026 th{
+  color:#000000!important;
+  background:#FFE7A3!important;
+}
+
+#group2-syllabus-2026 td{
+  color:#000000!important;
+  background:#FFFFFF!important;
+}
+
+#group2-syllabus-2026 tr.tot td{
+  color:#000000!important;
+  background:#FFF2CC!important;
+  font-weight:700!important;
+}
+
+#group2-syllabus-2026 details{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  color:#000000!important;
+  background:rgba(255,255,255,.90)!important;
+  border:1px solid #CCCCCC!important;
+  margin:10px 0!important;
+  border-radius:8px!important;
+}
+
+#group2-syllabus-2026 summary{
+  display:list-item!important;
+  color:#000000!important;
+  background:#FFE7A3!important;
+  visibility:visible!important;
+  opacity:1!important;
+  padding:12px!important;
+  font-weight:700!important;
+}
+
+#group2-syllabus-2026 details[open]>.dbody{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  color:#000000!important;
+  background:transparent!important;
+  padding:10px 15px 14px!important;
+}
+
+#group2-syllabus-2026 .dbody,
+#group2-syllabus-2026 .dbody p,
+#group2-syllabus-2026 .dbody li,
+#group2-syllabus-2026 .dbody ol{
+  color:#000000!important;
+  visibility:visible!important;
+  opacity:1!important;
+  background:transparent!important;
+}
+
+#group2-syllabus-2026 .dbody b{
+  color:#000000!important;
+  font-weight:800!important;
+}
+
+#group2-syllabus-2026 .syl26-act{
+  display:flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+  flex-wrap:wrap!important;
+}
+
+#group2-syllabus-2026 a{
+  color:#000000!important;
+  visibility:visible!important;
+  opacity:1!important;
+  text-decoration:underline!important;
+  font-weight:700!important;
+}
+
 </style>
   <div class="syl26" id="group2-syllabus-2026">
     <div class="syl26-h">✅ APPSC Group-2 తాజా సిలబస్ &amp; పరీక్షా విధానం — Notification No. 37/2026</div>
@@ -1536,7 +1699,7 @@ footer{background:#17243a!important;color:#d9e1ed!important}
       <p><b>5. Mental Ability (30):</b> Logical reasoning (statement &amp; assumptions / argument / conclusion / courses of action) · number series, letter series, odd man out, coding–decoding, relations, shapes · basic numeracy (number system, averages, ratio &amp; proportion, percentage, SI &amp; CI, time &amp; work, time &amp; distance) · data analysis (tables, bar, line, pie charts).</p>
     </div></details>
 
-    <details><summary>📗 Mains Paper I — 150 marks · Section A: Social &amp; Cultural History of AP (75)</summary><div class="dbody"><ol>
+    <details open><summary>📗 Mains Paper I — 150 marks · Section A: Social &amp; Cultural History of AP (75)</summary><div class="dbody"><ol>
       <li>Pre-historic cultures; Satavahanas, Ikshvakus, Vishnukundins, Eastern Chalukyas of Vengi, Andhra Cholas — society, religion, Telugu language, art &amp; architecture.</li>
       <li>Major and minor dynasties of Andhradesa (11th–16th centuries A.D.); growth of Telugu language, literature, art &amp; architecture.</li>
       <li>Advent of Europeans; Andhra under the Company; 1857 Revolt; British rule &amp; socio-cultural awakening; Justice Party / Self-Respect Movement; Nationalist Movement in Andhra (1885–1947); socialist, communist, anti-zamindari &amp; kisan movements; nationalist poetry &amp; revolutionary literature; Nataka Samasthalu; women’s participation.</li>
@@ -1544,7 +1707,7 @@ footer{background:#17243a!important;color:#d9e1ed!important}
       <li>Formation of Andhra Pradesh (1956); Visalandhra Mahasabha; States Reorganisation Commission; Gentlemen’s Agreement; social &amp; cultural events 1956–2014.</li>
     </ol></div></details>
 
-    <details><summary>📗 Mains Paper I — Section B: Indian Constitution (75)</summary><div class="dbody"><ol start="6">
+    <details open><summary>📗 Mains Paper I — Section B: Indian Constitution (75)</summary><div class="dbody"><ol start="6">
       <li>Nature of the Constitution; constitutional development; salient features; Preamble; Fundamental Rights, DPSP, Fundamental Duties; amendment procedure; Basic Structure.</li>
       <li>Structure and functions of Government — Legislature, Executive, Judiciary; unicameral/bicameral legislatures; judicial review &amp; judicial activism.</li>
       <li>Distribution of legislative, executive and financial powers between Union and States; constitutional bodies; Human Rights Commission, RTI, Lokpal &amp; Lok Ayukta.</li>
@@ -1552,7 +1715,7 @@ footer{background:#17243a!important;color:#d9e1ed!important}
       <li>Centralisation vs decentralisation; Community Development Programme; Balwant Rai Mehta &amp; Ashok Mehta Committees; 73rd &amp; 74th Constitutional Amendment Acts and their implementation.</li>
     </ol></div></details>
 
-    <details><summary>📙 Mains Paper II — 150 marks · Section A: Indian &amp; Andhra Pradesh Economy (75)</summary><div class="dbody"><ol>
+    <details open><summary>📙 Mains Paper II — 150 marks · Section A: Indian &amp; Andhra Pradesh Economy (75)</summary><div class="dbody"><ol>
       <li>Structure of Indian Economy; national income; sectoral distribution; growth &amp; development; planning strategy; 1991 reforms; decentralisation of financial resources; NITI Aayog.</li>
       <li>Money, banking, public finance &amp; foreign trade — money supply, RBI &amp; monetary policy, banking reforms, inflation, fiscal policy, deficit finance, tax structure, GST, recent Union Budget, BoP, FDI.</li>
       <li>Indian agriculture (cropping pattern, productivity, finance, marketing, MSP, procurement); industrial development (1991 policy, disinvestment, Ease of Doing Business, industrial sickness); services sector (IT &amp; ITES).</li>
@@ -1560,7 +1723,7 @@ footer{background:#17243a!important;color:#d9e1ed!important}
       <li>AP agriculture &amp; allied sectors (horticulture, animal husbandry, fisheries, forests, rural credit &amp; cooperatives); AP Industrial Policy, Single Window, MSMEs, industrial corridors; AP services / IT / electronics policy.</li>
     </ol></div></details>
 
-    <details><summary>📙 Mains Paper II — Section B: Science &amp; Technology (75)</summary><div class="dbody"><ol start="6">
+    <details open><summary>📙 Mains Paper II — Section B: Science &amp; Technology (75)</summary><div class="dbody"><ol start="6">
       <li>Technology missions, policies &amp; applications — National S&amp;T and Innovation Policy; space technology (launch vehicles, satellites, missions); defence technology (DRDO, IGMDP); ICT, Digital India, e-Governance, Cyber Security Policy; nuclear technology.</li>
       <li>Energy management — installed capacities, National Energy Policy, Biofuels Policy, Bharat Stage norms, renewable &amp; non-renewable energy schemes.</li>
       <li>Ecosystem &amp; biodiversity — ecology concepts, hotspots, conservation conventions, CITES, endangered species, Biosphere Reserves, wildlife conservation acts &amp; projects.</li>
@@ -1568,7 +1731,7 @@ footer{background:#17243a!important;color:#d9e1ed!important}
       <li>Environment &amp; health — global warming, climate-change conventions &amp; protocols, ozone depletion, ocean acidification, SDGs, disease burden, epidemic / pandemic preparedness, public-health programmes in India.</li>
     </ol></div></details>
 
-    <details><summary>💻 Computer Proficiency Test (CPT) — 100 marks, 60 min (qualifying)</summary><div class="dbody">
+    <details open><summary>💻 Computer Proficiency Test (CPT) — 100 marks, 60 min (qualifying)</summary><div class="dbody">
       <p><b>Part A (20%) — MCQs:</b> introduction to computers, input/output &amp; storage devices, RAM/ROM/CPU, types of software, operating systems (Windows; basic Linux &amp; macOS commands), Internet concepts, IP address, e-mail, WWW.</p>
       <p><b>Part B (80%) — computer-based practical (MS Office / LibreOffice / OpenOffice):</b> word processing &amp; typing speed (25%), organising &amp; inserting objects (15%), spreadsheet formatting, formulas, conditional formatting &amp; graphs (20%), presentation software (20%).</p>
     </div></details>
