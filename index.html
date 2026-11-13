@@ -869,8 +869,8 @@ footer{background:#17243a!important;color:#d9e1ed!important}
   <div class="nav-links" id="nav-links">
     <a href="#home" onclick="closeMobileNav()">Home</a>
     <a href="#courses" onclick="closeMobileNav()">Courses</a>
-    <a class="nav-ntpc" href="#rrb-ntpc-course" onclick="closeMobileNav()">🚆 RRB NTPC</a>
-    <a href="#rrb-mock" onclick="closeMobileNav()">RRB Mock Tests</a>
+    <a class="nav-ntpc" href="#rrb-ntpc-course" onclick="closeMobileNav()"><span class="nav-new">NEW ADDITION</span>RRB NTPC <svg viewBox="0 0 120 40" aria-hidden="true"><rect x="0" y="34" width="120" height="2" fill="#5a3a00" opacity=".5"/><path d="M2 10h30q6 0 6 6v16H2z" fill="#c8202a"/><rect x="2" y="22" width="36" height="4" fill="#fff"/><rect x="8" y="13" width="8" height="7" rx="1" fill="#cfe6ff"/><rect x="20" y="13" width="8" height="7" rx="1" fill="#cfe6ff"/><g fill="#1b3f8f"><rect x="40" y="12" width="38" height="22" rx="2"/><rect x="80" y="12" width="38" height="22" rx="2"/></g><g fill="#cfe6ff"><rect x="44" y="16" width="7" height="6" rx="1"/><rect x="54" y="16" width="7" height="6" rx="1"/><rect x="64" y="16" width="7" height="6" rx="1"/><rect x="84" y="16" width="7" height="6" rx="1"/><rect x="94" y="16" width="7" height="6" rx="1"/><rect x="104" y="16" width="7" height="6" rx="1"/></g><g fill="#222"><circle cx="10" cy="34" r="3.2"/><circle cx="30" cy="34" r="3.2"/><circle cx="50" cy="34" r="3.2"/><circle cx="68" cy="34" r="3.2"/><circle cx="90" cy="34" r="3.2"/><circle cx="108" cy="34" r="3.2"/></g></svg></a>
+    <a class="nav-ntpc" href="#rrb-mock" onclick="closeMobileNav()"><span class="nav-new">NEW</span>RRB Mock Test <svg viewBox="0 0 120 40" aria-hidden="true"><rect x="0" y="34" width="120" height="2" fill="#5a3a00" opacity=".5"/><path d="M2 10h30q6 0 6 6v16H2z" fill="#c8202a"/><rect x="2" y="22" width="36" height="4" fill="#fff"/><rect x="8" y="13" width="8" height="7" rx="1" fill="#cfe6ff"/><rect x="20" y="13" width="8" height="7" rx="1" fill="#cfe6ff"/><g fill="#1b3f8f"><rect x="40" y="12" width="38" height="22" rx="2"/><rect x="80" y="12" width="38" height="22" rx="2"/></g><g fill="#cfe6ff"><rect x="44" y="16" width="7" height="6" rx="1"/><rect x="54" y="16" width="7" height="6" rx="1"/><rect x="64" y="16" width="7" height="6" rx="1"/><rect x="84" y="16" width="7" height="6" rx="1"/><rect x="94" y="16" width="7" height="6" rx="1"/><rect x="104" y="16" width="7" height="6" rx="1"/></g><g fill="#222"><circle cx="10" cy="34" r="3.2"/><circle cx="30" cy="34" r="3.2"/><circle cx="50" cy="34" r="3.2"/><circle cx="68" cy="34" r="3.2"/><circle cx="90" cy="34" r="3.2"/><circle cx="108" cy="34" r="3.2"/></g></svg></a>
     <a href="#resources" onclick="closeMobileNav()">Study Materials</a>
     <a href="#pdf-material" onclick="closeMobileNav()">Material (PDF)</a>
     <a href="#special-gk" onclick="closeMobileNav()">Special GK</a>
@@ -916,8 +916,13 @@ footer{background:#17243a!important;color:#d9e1ed!important}
 </section>
 
 <style id="ntpc-highlight-style">
-.nav-links a.nav-ntpc{background:linear-gradient(135deg,#FFD700,#E8A200);color:#2b1a00;font-weight:800;border-radius:6px;margin:0 6px;box-shadow:0 0 0 1px rgba(255,215,0,.6),0 3px 10px rgba(255,215,0,.25)}
-.nav-links a.nav-ntpc:hover{background:linear-gradient(135deg,#ffe45c,#f0ad00);color:#1c1000}
+.nav-links a.nav-ntpc,.academy-nav .nav-links>a.nav-ntpc{position:relative;display:inline-flex!important;align-items:center;gap:7px;width:fit-content;max-width:calc(100% - 20px);align-self:flex-start;margin:16px 8px 4px!important;padding:6px 10px 6px 12px!important;background:linear-gradient(180deg,#FFE27A 0%,#F5B400 50%,#D48A00 100%);color:#5a1010!important;font-family:system-ui,'Segoe UI',sans-serif;font-weight:900;font-size:14px!important;line-height:1.2;letter-spacing:.2px;border:1.5px solid #FFF1B0;border-radius:9px!important;box-shadow:0 0 0 1.5px #C98A00,0 3px 9px rgba(212,138,0,.4),inset 0 1px 0 rgba(255,255,255,.7);text-shadow:0 1px 0 rgba(255,255,255,.5);white-space:nowrap}
+.nav-links a.nav-ntpc:hover,.academy-nav .nav-links>a.nav-ntpc:hover{background:linear-gradient(180deg,#FFEA99 0%,#FFC61A 50%,#E09500 100%);color:#3d0808!important;transform:translateY(-1px)}
+.nav-ntpc .nav-new{position:absolute;top:-11px;right:-6px;background:#d2202b;color:#fff;font:800 8px/1 system-ui,sans-serif;letter-spacing:.6px;padding:3px 6px;border-radius:5px;text-shadow:none;box-shadow:0 2px 6px rgba(0,0,0,.3)}
+.nav-ntpc .nav-new::after{content:"";position:absolute;left:8px;bottom:-4px;border:4px solid transparent;border-top-color:#d2202b;border-bottom:0}
+.nav-ntpc svg{width:40px;height:14px;flex:none}
+@media(min-width:701px){.nav-links a.nav-ntpc{margin:6px 6px!important;align-self:center}.nav-ntpc .nav-new{top:-9px}}
+@media(max-width:380px){.nav-links a.nav-ntpc,.academy-nav .nav-links>a.nav-ntpc{font-size:13px!important}.nav-ntpc svg{width:34px;height:12px}}
 .course-card.ntpc-feat{position:relative;border:2px solid #d99a24!important;box-shadow:0 0 0 4px rgba(217,154,36,.18),0 12px 28px rgba(217,154,36,.22)!important}
 .course-card.ntpc-feat::before{content:"★ FEATURED";position:absolute;top:12px;right:12px;background:#b4232c;color:#fff;font:800 10px/1 system-ui,sans-serif;letter-spacing:1px;padding:6px 9px;border-radius:12px}
 .ntpc-hl{max-width:1160px;margin:26px auto;padding:0 20px}
