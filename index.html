@@ -1976,13 +1976,43 @@ function caCatShow(c){
   
 <script>
 (function(){
-  var DAILY = "📰 *APPSC Group-2 నేటి కరెంట్ అఫైర్స్ – 27 నవంబర్ 2026*\n\n🇮🇳 జాతీయం: రాజ్యాంగం – 22 భాషల్లో కొత్త ఎడిషన్; జనగణన నిర్వహణ సవాళ్లు\n🌍 అంతర్జాతీయం: IORA 25వ మంత్రివర్గ సమావేశం; అమెరికా – Section 301 టారిఫ్ ప్రతిపాదన\n💰 ఆర్థికం: ప్రభుత్వ రంగ బ్యాంకుల రుణాలు – ₹127 లక్షల కోట్లు; GRAI – ఫిర్యాదుల పరిష్కార సూచిక\n💻 సైన్స్ & టెక్: IndiaAI Mission – Chariot-1 Foundation Models; GLE-77 – సౌర కణాల పరిశీలన\n🛡️ రక్షణ: భారత్ – UAE 14వ JDCC సమావేశం; National Defence College – 66వ కోర్సు\n🌳 పర్యావరణం: కునో నేషనల్ పార్క్ – 9 చిరుత పిల్లలు; మేఘాలయలో 2 కొత్త గెక్కో జాతులు\n🌾 వ్యవసాయం: రికార్డు ఆహార ధాన్యాల ఉత్పత్తి 2025–26; BAHS 2026 – పాడి, పశు ఉత్పత్తి\n🏥 ఆరోగ్యం: ICMR – SAMPADA సర్వే; యాంటీమైక్రోబియల్ రెసిస్టెన్స్ (AMR)\n🏛️ AP ప్రత్యేకం: AP – SIPB ₹88,393 కోట్ల పెట్టుబడులు; AP – Circular Economy Policy\n🏙️ తెలంగాణ: Hyderabad – 18వ Poultry India Expo 2026; తెలంగాణ – VB-G RAM G గ్రామీణ మౌలిక సదుపాయాలు\n🏆 క్రీడలు: BIMSTEC Under-23 Athletics Meet; మహిళల ఆసియా ఛాంపియన్స్ ట్రోఫీ – హాకీ\n🎭 సంస్కృతి: Kashi Tamil Sangamam 5.0; తిరుప్పరంకుండ్రం – కార్తిగై దీపం\n📅 ముఖ్యమైన రోజులు: ముఖ్యమైన రోజులు (25–28 నవంబర్)\n\n👉 పూర్తి నోట్స్: ";
+  function buildDailyMessage(){
+    var labels = {};
+    document.querySelectorAll('#caCatBar .caCatBtn[data-c]').forEach(function(b){
+      var key = b.getAttribute('data-c');
+      if(key && key !== 'all') labels[key] = b.textContent.trim();
+    });
+    var grouped = {};
+    var total = 0;
+    document.querySelectorAll('#current-affairs .about-grid > .about-card[data-cat]').forEach(function(card){
+      var key = card.getAttribute('data-cat');
+      var heading = card.querySelector('h3');
+      if(!key || !heading) return;
+      if(!grouped[key]) grouped[key] = [];
+      grouped[key].push(heading.textContent.trim());
+      total++;
+    });
+    var lines = [
+      '📰 *APPSC Group-2 – నేటి కరెంట్ అఫైర్స్ | 27 నవంబర్ 2026*',
+      '📚 అన్ని విభాగాలు · మొత్తం ' + total + ' ముఖ్యాంశాలు',
+      ''
+    ];
+    Object.keys(labels).forEach(function(key){
+      if(!grouped[key] || !grouped[key].length) return;
+      lines.push(labels[key]);
+      grouped[key].forEach(function(title){ lines.push('• ' + title); });
+      lines.push('');
+    });
+    lines.push('👉 అన్ని అంశాల పూర్తి వివరణ, APPSC గుర్తుంచుకోండి పాయింట్లు మరియు మూలాలు:');
+    lines.push(pageUrl());
+    return lines.join('\n');
+  }
 
   function pageUrl(){ return location.href.split('#')[0] + '#current-affairs'; }
   function openWA(text){ window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank', 'noopener'); }
-  window.waShareAll = function(){ openWA(DAILY + pageUrl()); };
+  window.waShareAll = function(){ openWA(buildDailyMessage()); };
   window.waCopyAll = function(){
-    var txt = DAILY + pageUrl(), btn = document.getElementById('wa-copy-btn');
+    var txt = buildDailyMessage(), btn = document.getElementById('wa-copy-btn');
     function ok(){ if(btn){ var o = btn.textContent; btn.textContent = '✅ కాపీ అయింది'; setTimeout(function(){ btn.textContent = o; }, 2000); } }
     if(navigator.clipboard && navigator.clipboard.writeText){
       navigator.clipboard.writeText(txt).then(ok, fallback);
